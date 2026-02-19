@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GHM Atlas — Admin Pages Prototype</title>
+  <style>
+    :root { --bg:#0c0b0a; --panel:#12110f; --border:#2b2926; --gold:#d7bf7e; --muted:#b6b0a4;
+            --shadow: 0 10px 40px rgba(0,0,0,.45); --r:18px; --max:1200px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; background:var(--bg); color:#fff;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    .tabs{display:flex;flex-wrap:wrap; gap:10px; margin-bottom:18px;}
+    .tab{border:1px solid var(--border); border-radius:999px; padding:10px 14px; color:var(--muted); cursor:pointer;}
+    .tab.active{background:var(--gold); color:var(--bg); border-color:transparent;}
+    .card{background:var(--panel); border:1px solid var(--border); border-radius:var(--r); box-shadow:var(--shadow); padding:18px;}
+    .grid{display:grid; gap:18px;}
+    .h1{font-family:Georgia,'Times New Roman',serif; color:var(--gold); font-size:42px; letter-spacing:.04em; margin:0;}
+    .h2{font-family:Georgia,'Times New Roman',serif; color:var(--gold); font-size:24px; margin:0;}
+    .muted{color:var(--muted);}
+    .btn{display:inline-block; background:var(--gold); color:var(--bg); padding:12px 16px; border-radius:14px; text-decoration:none; font-weight:600;}
+    .btn.ghost{background:transparent; border:1px solid var(--border); color:#fff;}
+    .img{border:1px solid var(--border); border-radius:var(--r); background:linear-gradient(135deg,#1a1816,#0f0e0d);
+         box-shadow:var(--shadow); position:relative; overflow:hidden;}
+    .img::after{content:attr(data-label); position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+                color:var(--muted); font-size:14px;}
+    .row{display:flex; gap:18px; flex-wrap:wrap;}
+    .col{flex:1 1 320px;}
+    .chips{display:flex; gap:8px; flex-wrap:wrap;}
+    .chip{border:1px solid var(--border); border-radius:999px; padding:8px 10px; font-size:12px; color:var(--muted);}
+    .beats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+    .beat{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:10px; box-shadow:var(--shadow);}
+    .beat .img{aspect-ratio:1/1; border-radius:12px;}
+    .beat small{display:block; margin-top:8px; color:var(--muted);}
+    @media (max-width:900px){ .beats{grid-template-columns:repeat(2,1fr);} .h1{font-size:34px;} }
+    @media (max-width:520px){ .beats{grid-template-columns:1fr;} }
+    .page{display:none}
+    .page.active{display:block}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-page="hub">Atlas Hub</div>
+      <div class="tab" data-page="story">Story</div>
+      <div class="tab" data-page="teaser">Teaser</div>
+      <div class="tab" data-page="stamp">Stamp Detail</div>
+      <div class="tab" data-page="claim">Chronicle Claim</div>
+      <div class="tab" data-page="profile">Profile</div>
+    </div>
+
+    <section class="page active" id="hub">
+      <div class="card">
+        <div class="row" style="align-items:center;">
+          <div style="font-family:Georgia,serif; color:var(--gold); font-size:20px;">GHM · Atlas</div>
+          <div class="col">
+            <div class="card" style="padding:10px; box-shadow:none;">
+              <span class="muted" style="font-size:12px;">Search</span>
+              <div class="muted" style="font-size:14px;">stories, gods, beats…</div>
+            </div>
+          </div>
+          <div class="chips">
+            <div class="chip">Greek</div><div class="chip">Norse</div><div class="chip">Egyptian</div><div class="chip">All</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:2fr 1fr; margin-top:18px;">
+        <div class="card">
+          <h1 class="h1">Collect the Journey</h1>
+          <p class="muted">Own stamps & teasers, complete recipes, and claim your Chronicle.</p>
+          <a class="btn" href="#">Browse Stories</a>
+        </div>
+        <div class="card">
+          <h2 class="h2">Your Journeys</h2>
+          <div class="grid" style="grid-template-columns:repeat(4,1fr); margin-top:12px;">
+            <div class="card" style="padding:10px; box-shadow:none;"><div class="h2" style="font-size:22px;">2</div><div class="muted" style="font-size:12px;">3‑beat</div></div>
+            <div class="card" style="padding:10px; box-shadow:none;"><div class="h2" style="font-size:22px;">1</div><div class="muted" style="font-size:12px;">4‑beat</div></div>
+            <div class="card" style="padding:10px; box-shadow:none;"><div class="h2" style="font-size:22px;">1</div><div class="muted" style="font-size:12px;">6‑beat</div></div>
+            <div class="card" style="padding:10px; box-shadow:none;"><div class="h2" style="font-size:22px;">0</div><div class="muted" style="font-size:12px;">12‑beat</div></div>
+          </div>
+          <div style="margin-top:12px;"><a class="btn" href="#">Continue Jason →</a></div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:end; margin-top:18px;">
+        <h2 class="h2">Stories</h2><div class="muted" style="font-size:12px;">Sort: Popular</div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(3,1fr); margin-top:12px;">
+        <div class="card">
+          <div class="img" data-label="Story cover" style="aspect-ratio:16/10;"></div>
+          <h3 class="h2" style="margin-top:12px;">Jason and the Argonauts</h3>
+          <div class="muted" style="font-size:13px;">12‑Beat Epic · 7/12 complete</div>
+          <div style="margin-top:12px;"><a class="btn" href="#">Open</a></div>
+        </div>
+        <div class="card">
+          <div class="img" data-label="Story cover" style="aspect-ratio:16/10;"></div>
+          <h3 class="h2" style="margin-top:12px;">Perseus</h3>
+          <div class="muted" style="font-size:13px;">12‑Beat Epic · 5/12 complete</div>
+          <div style="margin-top:12px;"><a class="btn" href="#">Open</a></div>
+        </div>
+        <div class="card">
+          <div class="img" data-label="Story cover" style="aspect-ratio:16/10;"></div>
+          <h3 class="h2" style="margin-top:12px;">Achilles</h3>
+          <div class="muted" style="font-size:13px;">12‑Beat Epic · 3/12 complete</div>
+          <div style="margin-top:12px;"><a class="btn" href="#">Open</a></div>
+        </div>
+      </div>
+
+      <h2 class="h2" style="margin-top:18px;">Spotlights</h2>
+      <div class="grid" style="grid-template-columns:repeat(4,1fr); margin-top:12px;">
+        <div class="card"><div class="img" data-label="Spotlight cover" style="aspect-ratio:4/3;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Zeus</div><div class="muted" style="font-size:12px;">3‑Beat Spotlight</div></div>
+        <div class="card"><div class="img" data-label="Spotlight cover" style="aspect-ratio:4/3;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Athena</div><div class="muted" style="font-size:12px;">3‑Beat Spotlight</div></div>
+        <div class="card"><div class="img" data-label="Spotlight cover" style="aspect-ratio:4/3;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Medusa</div><div class="muted" style="font-size:12px;">3‑Beat Spotlight</div></div>
+        <div class="card"><div class="img" data-label="Spotlight cover" style="aspect-ratio:4/3;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Hydra</div><div class="muted" style="font-size:12px;">3‑Beat Spotlight</div></div>
+      </div>
+    </section>
+
+    <section class="page" id="story">
+      <div class="card">
+        <div class="muted" style="font-size:12px;">Atlas / Greek</div>
+        <h1 class="h1">Jason and the Argonauts</h1>
+        <div class="row" style="justify-content:space-between; align-items:center;">
+          <div class="muted">12‑Beat Epic</div>
+          <div class="chips"><div class="chip">All</div><div class="chip">Owned</div><div class="chip">Locked</div></div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:2fr 1fr; margin-top:18px;">
+        <div class="beats">
+          <div class="beat"><div class="img" data-label="Stage 1" style="aspect-ratio:1/1;"></div><small>Stage 1 · Label</small></div><div class="beat"><div class="img" data-label="Stage 2" style="aspect-ratio:1/1;"></div><small>Stage 2 · Label</small></div><div class="beat"><div class="img" data-label="Stage 3" style="aspect-ratio:1/1;"></div><small>Stage 3 · Label</small></div><div class="beat"><div class="img" data-label="Stage 4" style="aspect-ratio:1/1;"></div><small>Stage 4 · Label</small></div><div class="beat"><div class="img" data-label="Stage 5" style="aspect-ratio:1/1;"></div><small>Stage 5 · Label</small></div><div class="beat"><div class="img" data-label="Stage 6" style="aspect-ratio:1/1;"></div><small>Stage 6 · Label</small></div><div class="beat"><div class="img" data-label="Stage 7" style="aspect-ratio:1/1;"></div><small>Stage 7 · Label</small></div><div class="beat"><div class="img" data-label="Stage 8" style="aspect-ratio:1/1;"></div><small>Stage 8 · Label</small></div><div class="beat"><div class="img" data-label="Stage 9" style="aspect-ratio:1/1;"></div><small>Stage 9 · Label</small></div><div class="beat"><div class="img" data-label="Stage 10" style="aspect-ratio:1/1;"></div><small>Stage 10 · Label</small></div><div class="beat"><div class="img" data-label="Stage 11" style="aspect-ratio:1/1;"></div><small>Stage 11 · Label</small></div><div class="beat"><div class="img" data-label="Stage 12" style="aspect-ratio:1/1;"></div><small>Stage 12 · Label</small></div>
+        </div>
+        <div class="card">
+          <h2 class="h2">Stage 7 · Approach</h2>
+          <div class="muted" style="margin-top:6px;">Status: <span style="color:#fff;">Completed</span> via Stamp</div>
+          <div style="margin-top:12px;" class="img" data-label="Owned Stamp (scene)" style="aspect-ratio:4/3;"></div>
+          <div style="margin-top:12px;" class="img" data-label="Owned Teaser (1/1)" style="aspect-ratio:4/3;"></div>
+          <div class="muted" style="margin-top:12px;">Counts toward: 4‑Beat · 12‑Beat</div>
+          <div class="row" style="margin-top:12px;">
+            <a class="btn" href="#">Collect another version</a>
+            <a class="btn ghost" href="#">View marketplace</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="teaser">
+      <div class="grid" style="grid-template-columns:2fr 1fr;">
+        <div class="img" data-label="Hero Artwork (zoom)" style="aspect-ratio:16/10;"></div>
+        <div class="card">
+          <h2 class="h2">Talos, the Bronze Giant — Teaser (1/1)</h2>
+          <div class="muted" style="margin-top:6px;">Story: Jason · Stage 11 (Resurrection)</div>
+          <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+            <div class="h2" style="font-size:28px;">Ξ 7.50</div>
+            <a class="btn" href="#">Collect</a>
+          </div>
+          <div class="muted" style="margin-top:10px; font-size:12px; text-decoration:underline;">GHM Collector Licence</div>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; font-size:12px;">
+            <div class="muted">Contract · 0x…</div><div class="muted">Token · #001</div>
+            <div class="muted">Chain · Ethereum</div><div class="muted">Owner · 0xAB…91</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px; display:flex; justify-content:space-between; align-items:center;">
+        <div class="muted">Completes Stage 11 · Resurrection</div>
+        <a class="btn" href="#">View Story Journey →</a>
+      </div>
+    </section>
+
+    <section class="page" id="stamp">
+      <div class="grid" style="grid-template-columns:2fr 1fr;">
+        <div class="img" data-label="Stamp Hero (scene/relic/type)" style="aspect-ratio:16/10;"></div>
+        <div class="card">
+          <h2 class="h2">Symplegades Passage — Scene Stamp</h2>
+          <div class="muted" style="margin-top:6px;">Stage 7 (Approach) · Edition of 100</div>
+          <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+            <div class="h2" style="font-size:28px;">Ξ 0.15</div>
+            <a class="btn" href="#">Collect</a>
+          </div>
+          <div class="muted" style="margin-top:10px;">Completes Stage 7</div>
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;">
+            <div class="img" data-label="Relic version" style="aspect-ratio:1/1;"></div>
+            <div class="img" data-label="Type version" style="aspect-ratio:1/1;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="claim">
+      <div class="card">
+        <h2 class="h2">Jason · 12‑Beat Epic</h2>
+        <div class="muted">You own <span style="color:#fff;">12/12</span> beats</div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:2fr 1fr; margin-top:18px;">
+        <div class="beats">
+          <div class="beat"><div class="img" data-label="Beat 1" style="aspect-ratio:1/1;"></div><small>Stage 1</small></div><div class="beat"><div class="img" data-label="Beat 2" style="aspect-ratio:1/1;"></div><small>Stage 2</small></div><div class="beat"><div class="img" data-label="Beat 3" style="aspect-ratio:1/1;"></div><small>Stage 3</small></div><div class="beat"><div class="img" data-label="Beat 4" style="aspect-ratio:1/1;"></div><small>Stage 4</small></div><div class="beat"><div class="img" data-label="Beat 5" style="aspect-ratio:1/1;"></div><small>Stage 5</small></div><div class="beat"><div class="img" data-label="Beat 6" style="aspect-ratio:1/1;"></div><small>Stage 6</small></div><div class="beat"><div class="img" data-label="Beat 7" style="aspect-ratio:1/1;"></div><small>Stage 7</small></div><div class="beat"><div class="img" data-label="Beat 8" style="aspect-ratio:1/1;"></div><small>Stage 8</small></div><div class="beat"><div class="img" data-label="Beat 9" style="aspect-ratio:1/1;"></div><small>Stage 9</small></div><div class="beat"><div class="img" data-label="Beat 10" style="aspect-ratio:1/1;"></div><small>Stage 10</small></div><div class="beat"><div class="img" data-label="Beat 11" style="aspect-ratio:1/1;"></div><small>Stage 11</small></div><div class="beat"><div class="img" data-label="Beat 12" style="aspect-ratio:1/1;"></div><small>Stage 12</small></div>
+        </div>
+        <div class="card">
+          <h2 class="h2">Claim Chronicle</h2>
+          <ul class="muted" style="margin-top:10px; line-height:1.7;">
+            <li>Recipe: 12‑Beat Epic</li>
+            <li>Perks: Chronicle NFT + Poster PDF</li>
+          </ul>
+          <div style="margin-top:12px;"><a class="btn" href="#">Claim</a></div>
+          <div class="muted" style="margin-top:14px; font-size:12px;">After claim: download poster (PNG/PDF)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="profile">
+      <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <h1 class="h1">0xAB…91</h1>
+          <div class="muted">Ethereum · Connected</div>
+        </div>
+        <a class="btn ghost" href="#">Settings</a>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <div class="chips">
+          <div class="chip" style="background:var(--gold); color:var(--bg); border-color:transparent;">Journeys</div>
+          <div class="chip">NFTs</div>
+          <div class="chip">Chronicles</div>
+        </div>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(3,1fr); margin-top:18px;">
+        <div class="card"><div class="img" data-label="cover" style="aspect-ratio:16/10;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Jason</div><div class="muted" style="font-size:12px;">7/12 complete</div><div style="margin-top:10px;"><a class="btn" href="#">Continue</a></div></div>
+        <div class="card"><div class="img" data-label="cover" style="aspect-ratio:16/10;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Perseus</div><div class="muted" style="font-size:12px;">5/12 complete</div><div style="margin-top:10px;"><a class="btn" href="#">Continue</a></div></div>
+        <div class="card"><div class="img" data-label="cover" style="aspect-ratio:16/10;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Achilles</div><div class="muted" style="font-size:12px;">3/12 complete</div><div style="margin-top:10px;"><a class="btn" href="#">Continue</a></div></div>
+      </div>
+
+      <h2 class="h2" style="margin-top:18px;">Chronicles</h2>
+      <div class="grid" style="grid-template-columns:repeat(2,1fr); margin-top:12px;">
+        <div class="card"><div class="img" data-label="Chronicle badge" style="aspect-ratio:16/10;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Jason · 12‑Beat</div><div class="muted" style="font-size:12px;">Poster ready</div><div style="margin-top:10px;"><a class="btn" href="#">Download PDF</a></div></div>
+        <div class="card"><div class="img" data-label="Chronicle badge" style="aspect-ratio:16/10;"></div><div class="h2" style="margin-top:10px; font-size:18px;">Perseus · 6‑Beat</div><div class="muted" style="font-size:12px;">In progress</div><div style="margin-top:10px;"><a class="btn ghost" href="#">View</a></div></div>
+      </div>
+    </section>
+
+  </div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const pages = document.querySelectorAll('.page');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    const id = t.dataset.page;
+    pages.forEach(p => p.classList.toggle('active', p.id === id));
+    window.scrollTo({top:0, behavior:'smooth'});
+  }));
+</script>
+</body>
+</html>
