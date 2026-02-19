@@ -1,3 +1,5 @@
+spec + acceptance criteria
+
 # GHM Atlas — Concept + Production Plan + Codex Handover (v1)
 
 ## 1) What Atlas is (one-paragraph intro)
