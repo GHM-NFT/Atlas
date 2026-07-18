@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07172a">
+  <title>GHM Atlas — Command Canvas v12</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the command canvas</a>
+
+  <header class="topbar">
+    <button class="icon-button menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="brand">
+      <span class="brand-kicker">GHM</span>
+      <span class="brand-title">ATLAS</span>
+    </div>
+
+    <nav class="view-tabs" aria-label="Visualisation views">
+      <button class="view-tab active" data-view="birdseye">Bird’s-eye</button>
+      <button class="view-tab" data-view="structured">Structured</button>
+      <button class="view-tab" data-view="tiles">Square chart</button>
+      <button class="view-tab" data-view="waffle">Waffle chart</button>
+    </nav>
+
+    <div class="command-total" aria-live="polite">
+      <span>Command Centre</span>
+      <strong id="totalItems">— items</strong>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="left-rail" id="leftRail" aria-label="Atlas navigation">
+      <button class="rail-item active" data-view="birdseye" aria-label="Bird’s-eye overview">⌂</button>
+      <button class="rail-item" data-view="structured" aria-label="Structured view">▤</button>
+      <button class="rail-item" data-view="tiles" aria-label="Square chart">▦</button>
+      <button class="rail-item" data-view="waffle" aria-label="Waffle chart">▦</button>
+      <button class="rail-item" id="refreshButton" aria-label="Refresh live data">↻</button>
+    </aside>
+
+    <main id="main" class="main">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Gods • Heroes • Myths</p>
+          <h1>Project command canvas</h1>
+          <p class="hero-copy">A live overview of the eleven fixed workstreams, showing what is complete, active, at risk, blocked, in review, and still to do.</p>
+        </div>
+        <div class="sync-card">
+          <span class="sync-dot" id="syncDot"></span>
+          <div>
+            <strong id="syncLabel">Connecting to live register…</strong>
+            <small id="syncTime">Google Sheets</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-label="Command status">
+        <button class="status-stat active" data-status="ALL">
+          <span>All</span><strong id="countAll">0</strong>
+        </button>
+        <button class="status-stat" data-status="ACTIVE">
+          <span class="status-symbol active-status"></span><span>Active</span><strong id="countActive">0</strong>
+        </button>
+        <button class="status-stat" data-status="AT_RISK">
+          <span class="status-symbol risk-status"></span><span>At risk</span><strong id="countRisk">0</strong>
+        </button>
+        <button class="status-stat" data-status="BLOCKED">
+          <span class="status-symbol blocked-status"></span><span>Blocked</span><strong id="countBlocked">0</strong>
+        </button>
+        <button class="status-stat" data-status="REVIEW">
+          <span class="status-symbol review-status"></span><span>Review</span><strong id="countReview">0</strong>
+        </button>
+        <button class="status-stat" data-status="COMPLETED">
+          <span class="status-symbol complete-status"></span><span>Completed</span><strong id="countCompleted">0</strong>
+        </button>
+      </section>
+
+      <section class="controls-panel">
+        <label class="search-field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Node, owner, evidence, workstream…">
+        </label>
+
+        <label>
+          <span>Workstream</span>
+          <select id="workstreamFilter">
+            <option value="ALL">All 11 workstreams</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Owner</span>
+          <select id="ownerFilter">
+            <option value="ALL">All owners</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Risk</span>
+          <select id="riskFilter">
+            <option value="ALL">All risk levels</option>
+            <option value="RED">Red</option>
+            <option value="AMBER">Amber</option>
+            <option value="GREEN">Green</option>
+          </select>
+        </label>
+
+        <button class="reset-button" id="resetButton">Reset filters</button>
+      </section>
+
+      <section class="attention-panel" aria-label="Needs attention">
+        <div class="attention-heading">
+          <div>
+            <p class="eyebrow">Priority intelligence</p>
+            <h2>Needs attention</h2>
+          </div>
+          <button id="attentionToggle" class="attention-toggle" aria-expanded="true">Collapse</button>
+        </div>
+        <div id="attentionList" class="attention-list"></div>
+      </section>
+
+      <section class="legend" aria-label="Visual legend">
+        <div><span class="legend-fill state-done"></span>Workflow state</div>
+        <div><span class="legend-ring risk-red"></span>Risk is shown by the outer ring</div>
+        <div><span class="legend-square selected-sample"></span>Selected area</div>
+        <div class="results-summary" id="resultsSummary">Loading data…</div>
+      </section>
+
+      <section id="viewContainer" class="view-container" aria-live="polite">
+        <div class="loading-state">
+          <div class="loader"></div>
+          <p>Loading the Atlas command register…</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="right-panel" id="rightPanel" aria-label="Selected workstream details">
+      <button class="panel-close" id="panelClose" aria-label="Close details">×</button>
+      <p class="eyebrow">Atlas overview</p>
+      <h2 id="detailTitle">Select a workstream</h2>
+      <p id="detailDescription">Choose any workstream card, tile, or waffle cell to inspect its live status and underlying items.</p>
+
+      <div class="detail-metrics">
+        <div><span>Total</span><strong id="detailTotal">—</strong></div>
+        <div><span>Complete</span><strong id="detailDone">—</strong></div>
+        <div><span>Open</span><strong id="detailOpen">—</strong></div>
+        <div><span>At risk</span><strong id="detailRisk">—</strong></div>
+      </div>
+
+      <div class="progress-block">
+        <div class="progress-label"><span>Completion</span><strong id="detailPercent">—</strong></div>
+        <div class="progress-track"><span id="detailProgress"></span></div>
+      </div>
+
+      <div class="detail-list-wrap">
+        <div class="detail-list-heading">
+          <h3>Current items</h3>
+          <select id="detailSort" aria-label="Sort workstream items">
+            <option value="priority">Priority first</option>
+            <option value="state">Workflow state</option>
+            <option value="owner">Owner</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+        <div id="detailList" class="detail-list"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
