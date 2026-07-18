@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07172a">
+  <title>GHM Atlas — Command Canvas v15</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the command canvas</a>
+
+  <header class="topbar">
+    <button class="icon-button menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="brand">
+      <picture>
+        <source media="(max-width: 900px)" srcset="assets/atlas-logo-responsive.png">
+        <img class="atlas-logo" src="assets/atlas-logo-desktop.png" alt="Atlas">
+      </picture>
+      <span class="brand-kicker">GHM Command Canvas</span>
+    </div>
+
+    <nav class="view-tabs" aria-label="Visualisation views">
+      <button class="view-tab active" data-view="waffle">Project overview</button>
+      <button class="view-tab" data-view="structured">Structured</button>
+      <button class="view-tab" data-view="tiles">Square chart</button>
+    </nav>
+
+    <div class="command-total" aria-live="polite">
+      <span>Command Centre</span>
+      <strong id="totalItems">— items</strong>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="left-rail workstream-rail" id="leftRail" aria-label="Workstream navigation">
+      <button class="rail-home active" id="railHome" aria-label="Show all workstreams">⌂</button>
+      <div id="railWorkstreams" class="rail-workstreams"></div>
+    </aside>
+
+    <main id="main" class="main">
+      <section class="overview-heading">
+        <div>
+          <p class="eyebrow">Gods • Heroes • Myths</p>
+          <h1>Atlas project overview</h1>
+          <p>Eleven fixed workstreams. Every square is a live project item. Colour shows workflow state; hover and selection reveal dependencies.</p>
+        </div>
+        <div class="overview-actions">
+          <label class="compact-search">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Search items, owner or workstream">
+          </label>
+          <button id="resetButton" class="reset-button">Reset view</button>
+        </div>
+      </section>
+
+      <section class="overview-summary" aria-label="Current project totals">
+        <div><span>Visible items</span><strong id="countAll">0</strong></div>
+        <div><span>Active</span><strong id="countActive">0</strong></div>
+        <div><span>At risk</span><strong id="countRisk">0</strong></div>
+        <div><span>Blocked</span><strong id="countBlocked">0</strong></div>
+        <div><span>Review</span><strong id="countReview">0</strong></div>
+        <div><span>Complete</span><strong id="countCompleted">0</strong></div>
+      </section>
+
+      <section id="viewContainer" class="view-container" aria-live="polite">
+        <div class="loading-state">
+          <div class="loader"></div>
+          <p>Loading the Atlas command register…</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="node-tooltip" id="nodeTooltip" hidden></div>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
