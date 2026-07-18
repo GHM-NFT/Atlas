@@ -1,0 +1,6 @@
+{
+  "product": "Atlas Command Centre Map",
+  "version": 18,
+  "default_view": "birdseye",
+  "visual_map_view": "visualmap"
+}
