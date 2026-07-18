@@ -1,0 +1,52 @@
+{
+  "logo": {
+    "desktop": "assets/atlas-logo-desktop.png",
+    "responsive": "assets/atlas-logo-responsive.png"
+  },
+  "workstream_icons": {
+    "WS001": {
+      "desktop": "assets/workstream-icons/ws001-desktop.png",
+      "responsive": "assets/workstream-icons/ws001-responsive.png"
+    },
+    "WS002": {
+      "desktop": "assets/workstream-icons/ws002-desktop.png",
+      "responsive": "assets/workstream-icons/ws002-responsive.png"
+    },
+    "WS003": {
+      "desktop": "assets/workstream-icons/ws003-desktop.png",
+      "responsive": "assets/workstream-icons/ws003-responsive.png"
+    },
+    "WS004": {
+      "desktop": "assets/workstream-icons/ws004-desktop.png",
+      "responsive": "assets/workstream-icons/ws004-responsive.png"
+    },
+    "WS005": {
+      "desktop": "assets/workstream-icons/ws005-desktop.png",
+      "responsive": "assets/workstream-icons/ws005-responsive.png"
+    },
+    "WS006": {
+      "desktop": "assets/workstream-icons/ws006-desktop.png",
+      "responsive": "assets/workstream-icons/ws006-responsive.png"
+    },
+    "WS007": {
+      "desktop": "assets/workstream-icons/ws007-desktop.png",
+      "responsive": "assets/workstream-icons/ws007-responsive.png"
+    },
+    "WS008": {
+      "desktop": "assets/workstream-icons/ws008-desktop.png",
+      "responsive": "assets/workstream-icons/ws008-responsive.png"
+    },
+    "WS009": {
+      "desktop": "assets/workstream-icons/ws009-desktop.png",
+      "responsive": "assets/workstream-icons/ws009-responsive.png"
+    },
+    "WS010": {
+      "desktop": "assets/workstream-icons/ws010-desktop.png",
+      "responsive": "assets/workstream-icons/ws010-responsive.png"
+    },
+    "WS011": {
+      "desktop": "assets/workstream-icons/ws011-desktop.png",
+      "responsive": "assets/workstream-icons/ws011-responsive.png"
+    }
+  }
+}
