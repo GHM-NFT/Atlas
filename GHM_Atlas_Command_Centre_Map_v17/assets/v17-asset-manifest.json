@@ -1,0 +1,15 @@
+{
+  "product_name": "Atlas Command Centre Map",
+  "version": 17,
+  "brand_assets": {
+    "wordmark": "assets/brand/atlas-wordmark.png",
+    "map_desktop": "assets/brand/atlas-map-desktop.webp",
+    "map_responsive": "assets/brand/atlas-map-responsive.webp",
+    "medallion": "assets/brand/ghm-medallion.png",
+    "plaque": "assets/brand/command-centre-plaque.webp",
+    "atlas_figure": "assets/brand/atlas-figure.png",
+    "ethos": "assets/brand/ethos.png",
+    "column": "assets/brand/column.png"
+  },
+  "reference": "assets/reference/birdseye-interaction-flow.webp"
+}
