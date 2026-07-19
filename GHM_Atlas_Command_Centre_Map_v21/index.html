@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GHM Atlas Command Centre v21</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="rail" id="rail">
+<div class="rail-brand"><span>GHM</span><small>ATLAS</small></div>
+<nav>
+<button class="rail-btn official overview-link" data-view="overview" title="Overview"><img src="assets/nav-gold/overview.png" alt=""><span>Overview</span></button>
+
+<div class="group-label">Map views</div>
+<button class="rail-btn" data-view="birdseye" title="Bird’s-eye Map"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"/></svg><span>Bird’s-eye</span></button>
+<button class="rail-btn" data-view="structured" title="Structured Map"><svg viewBox="0 0 24 24"><path d="M5 4h14v4H5zM5 10h6v10H5zM13 10h6v10h-6z"/></svg><span>Structured</span></button>
+<button class="rail-btn" data-view="square" title="Block Map"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Block Map</span></button>
+<button class="rail-btn" data-view="waffle" title="Waffle Map"><svg viewBox="0 0 24 24"><path d="M4 4h4v4H4zM10 4h4v4h-4zM16 4h4v4h-4zM4 10h4v4H4zM10 10h4v4h-4zM16 10h4v4h-4zM4 16h4v4H4zM10 16h4v4h-4zM16 16h4v4h-4z"/></svg><span>Waffle</span></button>
+
+<div class="group-label">Project</div>
+<button class="rail-btn compact" data-view="timeline" title="Timeline"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="11" cy="18" r="2"/></svg><span>Timeline</span></button>
+<button class="rail-btn compact" data-view="register" title="Register"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg><span>Register</span></button>
+<button class="rail-btn compact" data-view="dependencies" title="Dependencies"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="8" cy="18" r="2"/><path d="M8 7h8M7 8l1 8M17 9l-7 7"/></svg><span>Dependencies</span></button>
+<button class="rail-btn compact" data-view="evidence" title="Evidence"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6zM14 3v5h5M9 12h6M9 16h6"/></svg><span>Evidence</span></button>
+<button class="rail-btn compact" data-view="decisions" title="Decisions"><svg viewBox="0 0 24 24"><path d="M12 3l3 6 6 .8-4.5 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.8 9 9z"/></svg><span>Decisions</span></button>
+
+<div class="group-label">Territories</div>
+<div class="territory-nav">
+<button data-open-ws="WS001" title="White Paper"><img src="assets/nav-gold/ws001.png" alt=""><span>White Paper</span></button>
+<button data-open-ws="WS002" title="Website"><img src="assets/nav-gold/ws002.png" alt=""><span>Website</span></button>
+<button data-open-ws="WS003" title="Pipeline / Technical"><img src="assets/nav-gold/ws003.png" alt=""><span>Pipeline</span></button>
+<button data-open-ws="WS004" title="Video Production"><img src="assets/nav-gold/ws004.png" alt=""><span>Video</span></button>
+<button data-open-ws="WS005" title="Metadata / Manifest"><img src="assets/nav-gold/ws005.png" alt=""><span>Metadata</span></button>
+<button data-open-ws="WS006" title="Launch / Market Readiness"><img src="assets/nav-gold/ws006.png" alt=""><span>Launch</span></button>
+<button data-open-ws="WS007" title="Atlas / Story / Portal"><img src="assets/nav-gold/ws007.png" alt=""><span>Portal</span></button>
+<button data-open-ws="WS008" title="Artwork / Collections"><img src="assets/nav-gold/ws008.png" alt=""><span>Artwork</span></button>
+<button data-open-ws="WS009" title="QA / Review / Decisions"><img src="assets/nav-gold/ws009.png" alt=""><span>QA</span></button>
+<button data-open-ws="WS010" title="Sources / Library"><img src="assets/nav-gold/ws010.png" alt=""><span>Sources</span></button>
+<button data-open-ws="WS011" title="Prints / Fulfilment"><img src="assets/nav-gold/ws011.png" alt=""><span>Prints</span></button>
+</div>
+</nav>
+</aside>
+
+<header class="topbar">
+<button id="mobileMenu" class="mobile-menu">☰</button>
+<div class="brand"><span>GHM ATLAS</span><strong>COMMAND CENTRE</strong></div>
+<nav class="quick">
+<button data-view="overview">Overview</button><button data-view="birdseye">Bird’s-eye</button>
+<button data-view="structured">Structured</button><button data-view="square">Block</button><button data-view="waffle">Waffle</button>
+<button data-view="timeline">Timeline</button><button data-view="register">Register</button>
+</nav>
+<div class="actions"><input id="globalSearch" type="search" placeholder="Search Atlas"><button id="addItemBtn" class="gold">+ Add item</button></div>
+</header>
+
+<main>
+<section class="view active" data-page="overview">
+<div class="page">
+<section class="overview-hero">
+<div class="hero-emblem"><img src="assets/brand/command-centre-emblem.png" alt="GHM Atlas Command Centre — 248 total items"></div>
+<div class="hero-copy">
+<p>OVERVIEW 01</p>
+<h1>Atlas Command Centre</h1>
+<span>A complete operational view of the Atlas programme — populated, connected and ready to explore.</span>
+<div class="hero-actions"><button class="gold" data-view="birdseye">Enter Bird’s-eye Map</button><button class="ghost" data-view="register">Open full register</button><span class="data-pill">● 248 complete prototype items</span></div>
+<img class="hero-ethos" src="assets/brand/ethos-option-2.webp" alt="Truth, Legacy, Creativity, Integrity and Connection">
+</div>
+</section>
+<div id="kpis" class="kpis"></div>
+
+<section class="status-court">
+<div class="section-head"><div><p>STATUS COURT</p><h2>Programme state</h2></div><span>Wax colours are paired with text labels for clarity.</span></div>
+<div id="seals" class="seals"></div>
+</section>
+
+<section>
+<div class="section-head"><div><p>THE ELEVEN TERRITORIES</p><h2>Workstream overview</h2></div><button data-view="birdseye" class="link-btn">Open Bird’s-eye Map →</button></div>
+<div id="workstreams" class="workstreams"></div>
+</section>
+
+<div class="two-col">
+<section class="panel"><div class="panel-head"><h2>Priority queue</h2><span id="priorityCount"></span></div><div id="priorityQueue"></div></section>
+<section class="panel"><div class="panel-head"><h2>Upcoming milestones</h2><button data-view="timeline" class="link-btn">Timeline →</button></div><div id="milestones"></div></section>
+</div>
+
+
+</div>
+</section>
+
+<section class="view map-view" data-page="birdseye">
+<div class="map-shell" id="mapShell">
+<div class="map-title">BIRD’S-EYE MAP</div>
+<div class="map-tools">
+<label>Layout<select id="mapLayout"><option value="dependency">Dependency</option><option value="territory">Territory</option><option value="workflow">Workflow</option><option value="radial">Radial</option></select></label>
+<label>Status<select id="mapStatus"><option value="all">All statuses</option><option>Completed</option><option>Active</option><option>Review</option><option>Blocked</option><option>Later</option></select></label>
+<button id="toggleEdges" class="active">Connections</button><button id="toggleLabels" class="active">Labels</button><button id="fitMap">Fit</button><button id="fullscreenMap">Full screen</button>
+</div>
+<div class="legend"><span><i class="c-completed"></i>Completed</span><span><i class="c-active"></i>Active</span><span><i class="c-review"></i>Review</span><span><i class="c-blocked"></i>Blocked</span><span><i class="c-later"></i>Later</span><span><b></b>Risk ring</span></div>
+<svg id="birdMap" viewBox="0 0 1600 940"></svg>
+<div class="map-help">Select a workstream icon to open its command chamber · select a coloured dependency dot to inspect an item</div>
+</div>
+</section>
+
+<section class="view" data-page="structured"><div class="page"><div class="heading compact"><div><p>STRUCTURED VIEW</p><h1>Workstream structure</h1></div></div><div id="structuredBoard" class="structured"></div></div></section>
+<section class="view" data-page="square"><div class="page"><div class="heading compact"><div><p>SQUARE CHART</p><h1>Workstream block map</h1><span>Every block includes the original icon, delivery state and live item summary.</span></div></div><div id="squareGrid" class="square-grid"></div></div></section>
+<section class="view" data-page="waffle"><div class="page"><div class="heading compact"><div><p>WAFFLE VIEW</p><h1>Every item, one connected field</h1><span>248 interactive items grouped by workstream, with icons, IDs, status and progress.</span></div></div><div id="waffleFilters" class="filters"></div><div id="waffleGrid" class="waffle"></div></div></section>
+<section class="view" data-page="timeline"><div class="page"><div class="heading compact"><div><p>TIMELINE</p><h1>Milestones and delivery horizon</h1></div></div><div id="timeline" class="timeline"></div></div></section>
+<section class="view" data-page="register"><div class="page"><div class="heading compact"><div><p>REGISTER</p><h1>Complete item register</h1></div><button id="exportCsv" class="gold">Export CSV</button></div><div id="registerTools" class="filters"></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Item</th><th>Workstream</th><th>Status</th><th>Risk</th><th>Owner</th><th>Due</th><th>Progress</th></tr></thead><tbody id="registerBody"></tbody></table></div></div></section>
+<section class="view" data-page="dependencies"><div class="page"><div class="heading compact"><div><p>DEPENDENCIES</p><h1>Connected delivery chains</h1></div></div><div id="dependencyList" class="cards"></div></div></section>
+<section class="view" data-page="evidence"><div class="page"><div class="heading compact"><div><p>EVIDENCE</p><h1>Approval and assurance library</h1></div></div><div id="evidenceGrid" class="cards"></div></div></section>
+<section class="view" data-page="decisions"><div class="page"><div class="heading compact"><div><p>DECISIONS</p><h1>Decision and governance record</h1></div></div><div id="decisionGrid" class="cards"></div></div></section>
+</main>
+
+<div id="scrim" class="scrim" hidden></div>
+<aside id="drawer" class="drawer" aria-hidden="true"><button id="closeDrawer" class="close">×</button><div id="drawerContent"></div></aside>
+<div id="itemModal" class="modal" hidden><div class="modal-card"><button id="closeItem" class="close">×</button><div id="itemContent"></div></div></div>
+<div id="addModal" class="modal" hidden><form id="addForm" class="modal-card"><button type="button" id="closeAdd" class="close">×</button><p class="eyebrow">PROTOTYPE INPUT</p><h2>Add a complete Atlas item</h2><label>Title<input name="title" required></label><label>Workstream<select name="workstream" id="addWs"></select></label><label>Status<select name="status"><option>Active</option><option>Review</option><option>Blocked</option><option>Later</option><option>Completed</option></select></label><label>Owner<input name="owner" required value="Ariadne Vale"></label><label>Due date<input name="due" type="date" required value="2026-09-30"></label><button class="gold" type="submit">Add prototype item</button></form></div>
+<div id="toast" class="toast"></div>
+
+<nav class="ethos-dock" aria-label="Atlas ethos navigation">
+<button data-view="evidence" title="Truth — evidence and assurance"><img src="assets/ethos/truth.webp" alt=""><span><b>Truth</b><small>Evidence</small></span></button>
+<button data-view="timeline" title="Legacy — delivery horizon"><img src="assets/ethos/legacy.webp" alt=""><span><b>Legacy</b><small>Timeline</small></span></button>
+<button data-open-ws="WS008" title="Creativity — artwork and collections"><img src="assets/ethos/creativity.webp" alt=""><span><b>Creativity</b><small>Artwork</small></span></button>
+<button data-view="decisions" title="Integrity — review and decisions"><img src="assets/ethos/integrity.webp" alt=""><span><b>Integrity</b><small>Decisions</small></span></button>
+<button data-view="birdseye" title="Connection — Bird’s-eye Map"><img src="assets/ethos/connection.webp" alt=""><span><b>Connection</b><small>Bird’s-eye</small></span></button>
+</nav>
+
+<script src="js/data.js"></script><script src="js/app.js"></script>
+</div>
+</body></html>
