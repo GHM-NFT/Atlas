@@ -1,0 +1,13 @@
+{
+  "product": "Atlas Command Centre Map",
+  "version": 19,
+  "foundation": "v18",
+  "default_view": "birdseye",
+  "visual_map": {
+    "clickable_dependencies": true,
+    "focus_hint": true
+  },
+  "command_chamber": {
+    "summary_band": true
+  }
+}

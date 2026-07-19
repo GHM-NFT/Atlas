@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06111f">
+  <meta name="description" content="Atlas Command Centre Map — complete UX prototype">
+  <title>Atlas Command Centre Map — v20 Prototype</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="loading-screen" id="loadingScreen" aria-live="polite">
+    <img src="assets/brand/ghm-medallion.png" alt="" class="loading-medallion">
+    <p>Opening the Atlas command centre</p>
+    <div class="loading-line"><span></span></div>
+  </div>
+
+  <a href="#main" class="skip-link">Skip to command centre</a>
+
+  <header class="topbar">
+    <button class="mobile-menu" id="mobileMenuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <button class="brand-button" data-action="home" aria-label="Return to overview">
+      <img src="assets/brand/atlas-wordmark.png" alt="Atlas" class="wordmark">
+      <span>
+        <strong>Command Centre Map</strong>
+        <small>Gods · Heroes · Myths</small>
+      </span>
+    </button>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <button class="nav-button active" data-view="overview"><span>01</span> Overview</button>
+      <button class="nav-button" data-view="map"><span>02</span> Visual map</button>
+      <button class="nav-button" data-view="timeline"><span>03</span> Timeline</button>
+      <button class="nav-button" data-view="register"><span>04</span> Register</button>
+    </nav>
+
+    <div class="top-actions">
+      <button class="command-search" id="commandSearchButton" aria-label="Open command search">
+        <span>⌕</span>
+        <span>Search Atlas</span>
+        <kbd>⌘ K</kbd>
+      </button>
+      <button class="icon-button" id="notificationButton" aria-label="Open notifications">
+        <span>◌</span><b>4</b>
+      </button>
+      <button class="profile-button" id="profileButton" aria-label="Open profile menu">
+        <span>GHM</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="side-rail" id="sideRail">
+      <div class="rail-section">
+        <p class="rail-label">Project health</p>
+        <div class="health-orb" id="healthOrb" role="img" aria-label="Overall project health">
+          <strong id="healthScore">78</strong>
+          <span>health</span>
+        </div>
+        <div class="rail-stats">
+          <div><strong id="railComplete">0</strong><span>complete</span></div>
+          <div><strong id="railBlocked">0</strong><span>blocked</span></div>
+          <div><strong id="railReview">0</strong><span>review</span></div>
+        </div>
+      </div>
+
+      <div class="rail-section">
+        <p class="rail-label">Data source</p>
+        <button class="data-source active" id="dataSourceButton">
+          <span class="live-dot"></span>
+          <span><strong>Prototype dataset</strong><small>88 records · fully populated</small></span>
+        </button>
+      </div>
+
+      <div class="rail-section compact">
+        <p class="rail-label">Quick filters</p>
+        <button class="quick-filter active" data-quick="ALL">All work</button>
+        <button class="quick-filter" data-quick="ATTENTION"><span class="dot red"></span> Needs attention</button>
+        <button class="quick-filter" data-quick="THIS_WEEK"><span class="dot gold"></span> Due this week</button>
+        <button class="quick-filter" data-quick="MINE"><span class="dot blue"></span> Owned by GHM</button>
+      </div>
+
+      <div class="rail-footer">
+        <img src="assets/brand/column.png" alt="" aria-hidden="true">
+        <p>Atlas v20<br><span>Experience prototype</span></p>
+      </div>
+    </aside>
+
+    <main id="main" class="main-content">
+      <section class="view active" id="view-overview" data-view-panel="overview">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Atlas command overview</p>
+            <h1>The whole programme, alive and legible.</h1>
+            <p class="lead">Every workstream is populated, every status is explicit, and every dependency is visible.</p>
+          </div>
+          <div class="heading-actions">
+            <button class="secondary-button" data-action="open-data">Data controls</button>
+            <button class="primary-button" data-action="open-critical">Review critical path</button>
+          </div>
+        </div>
+
+        <section class="hero-grid" aria-label="Project summary">
+          <article class="summary-card project-score">
+            <div class="summary-card-head">
+              <span class="kicker">Overall readiness</span>
+              <span class="trend positive">▲ 6 this month</span>
+            </div>
+            <div class="score-wrap">
+              <div class="score-ring" id="scoreRing">
+                <strong id="projectScore">78%</strong>
+                <span>on track</span>
+              </div>
+              <div class="score-copy">
+                <h2>Atlas is moving with purpose.</h2>
+                <p>Most creative and foundation work is stable. Launch readiness is now governed by three critical hand-offs.</p>
+                <button class="text-button" data-action="open-critical">See the three pressure points →</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="summary-card next-gate">
+            <div class="summary-card-head">
+              <span class="kicker">Next control gate</span>
+              <span class="status-pill critical">Critical</span>
+            </div>
+            <p class="date-large">21 <span>Aug 2026</span></p>
+            <h2>Cross-stream acceptance gate</h2>
+            <p>QA, website, manifests and launch operations converge for release acceptance.</p>
+            <div class="avatar-row">
+              <span>TW</span><span>MC</span><span>JA</span><span>SR</span>
+              <small>4 accountable leads</small>
+            </div>
+          </article>
+
+          <article class="summary-card signal-card">
+            <div class="summary-card-head">
+              <span class="kicker">Command signals</span>
+              <button class="mini-button" data-view="register">Open register</button>
+            </div>
+            <div class="signal-list" id="signalList"></div>
+          </article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow">Eleven connected workstreams</p>
+              <h2>Workstream command cards</h2>
+            </div>
+            <div class="segmented" role="group" aria-label="Card density">
+              <button class="active" data-density="comfortable">Comfortable</button>
+              <button data-density="compact">Compact</button>
+            </div>
+          </div>
+          <div class="workstream-grid" id="workstreamGrid"></div>
+        </section>
+
+        <section class="overview-lower-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div><p class="eyebrow">Decisions</p><h2>Awaiting command attention</h2></div>
+              <button class="text-button" data-action="show-decisions">View decision log →</button>
+            </div>
+            <div class="decision-list" id="decisionList"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head">
+              <div><p class="eyebrow">Recent activity</p><h2>The programme is moving</h2></div>
+              <span class="live-label"><i></i> Live prototype</span>
+            </div>
+            <div class="activity-list" id="activityList"></div>
+          </article>
+        </section>
+      </section>
+
+      <section class="view" id="view-map" data-view-panel="map">
+        <div class="page-heading compact-heading">
+          <div>
+            <p class="eyebrow">Visual dependency intelligence</p>
+            <h1>See the programme as a living system.</h1>
+            <p class="lead">Select a workstream or dependency to isolate its immediate operating context.</p>
+          </div>
+          <div class="heading-actions">
+            <button class="secondary-button" id="resetMapButton">Reset map</button>
+            <button class="primary-button" id="criticalMapButton">Critical path</button>
+          </div>
+        </div>
+
+        <div class="map-toolbar">
+          <div class="segmented" id="mapMode">
+            <button class="active" data-map-mode="all">All dependencies</button>
+            <button data-map-mode="critical">Critical only</button>
+            <button data-map-mode="selected">Selected context</button>
+          </div>
+          <div class="map-legend">
+            <span><i class="line healthy"></i> Healthy</span>
+            <span><i class="line watch"></i> Watch</span>
+            <span><i class="line critical"></i> Critical</span>
+          </div>
+          <label class="switch-label"><input type="checkbox" id="showLabels" checked><span></span> Labels</label>
+        </div>
+
+        <div class="map-layout">
+          <section class="map-stage" id="mapStage" aria-label="Interactive workstream dependency map">
+            <div class="map-backdrop"></div>
+            <svg id="dependencyMap" viewBox="0 0 1200 760" role="img" aria-label="Atlas workstream dependency graph"></svg>
+            <div class="map-watermark">
+              <img src="assets/brand/atlas-figure.png" alt="">
+            </div>
+          </section>
+
+          <aside class="map-inspector" id="mapInspector">
+            <div class="inspector-empty">
+              <img src="assets/brand/ghm-medallion.png" alt="">
+              <p class="eyebrow">Map inspector</p>
+              <h2>Select a workstream</h2>
+              <p>Its health, dependencies, milestone and immediate actions will appear here.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-timeline" data-view-panel="timeline">
+        <div class="page-heading compact-heading">
+          <div>
+            <p class="eyebrow">Milestones and control gates</p>
+            <h1>Time made visible.</h1>
+            <p class="lead">A programme-level view of the hand-offs that determine launch readiness.</p>
+          </div>
+          <div class="heading-actions">
+            <button class="secondary-button" id="timelineToday">Jump to today</button>
+            <button class="primary-button" data-action="open-milestone">Add review note</button>
+          </div>
+        </div>
+
+        <div class="timeline-summary" id="timelineSummary"></div>
+
+        <div class="timeline-panel">
+          <div class="timeline-toolbar">
+            <div class="filter-field">
+              <label for="timelineWorkstream">Workstream</label>
+              <select id="timelineWorkstream"><option value="ALL">All workstreams</option></select>
+            </div>
+            <div class="filter-field">
+              <label for="timelineStatus">Status</label>
+              <select id="timelineStatus">
+                <option value="ALL">All states</option>
+                <option value="on-track">On track</option>
+                <option value="watch">Watch</option>
+                <option value="critical">Critical</option>
+                <option value="planned">Planned</option>
+              </select>
+            </div>
+            <div class="timeline-key">
+              <span><i class="dot green"></i> On track</span>
+              <span><i class="dot gold"></i> Watch</span>
+              <span><i class="dot red"></i> Critical</span>
+              <span><i class="dot blue"></i> Planned</span>
+            </div>
+          </div>
+          <div class="timeline-board" id="timelineBoard"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-register" data-view-panel="register">
+        <div class="page-heading compact-heading">
+          <div>
+            <p class="eyebrow">Canonical work register</p>
+            <h1>Every item, owned and explicit.</h1>
+            <p class="lead">Search, sort and inspect the complete prototype register without losing context.</p>
+          </div>
+          <div class="heading-actions">
+            <button class="secondary-button" id="exportButton">Export view</button>
+            <button class="primary-button" id="newItemButton">Add prototype item</button>
+          </div>
+        </div>
+
+        <div class="register-controls">
+          <label class="search-field">
+            <span>⌕</span>
+            <input id="registerSearch" type="search" placeholder="Search title, ID, owner or evidence">
+          </label>
+          <div class="filter-field">
+            <label for="filterWorkstream">Workstream</label>
+            <select id="filterWorkstream"><option value="ALL">All workstreams</option></select>
+          </div>
+          <div class="filter-field">
+            <label for="filterStatus">Status</label>
+            <select id="filterStatus">
+              <option value="ALL">All statuses</option>
+              <option value="ACTIVE">Active</option>
+              <option value="REVIEW">Review</option>
+              <option value="BLOCKED">Blocked</option>
+              <option value="COMPLETE">Complete</option>
+              <option value="PLANNED">Planned</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="filterRisk">Risk</label>
+            <select id="filterRisk">
+              <option value="ALL">All risk levels</option>
+              <option value="HIGH">High</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="LOW">Low</option>
+            </select>
+          </div>
+          <button class="filter-reset" id="clearFilters">Clear</button>
+        </div>
+
+        <div class="register-meta">
+          <p id="registerCount">88 records</p>
+          <div class="table-density">
+            <span>Density</span>
+            <button class="active" data-table-density="comfortable">Comfortable</button>
+            <button data-table-density="compact">Compact</button>
+          </div>
+        </div>
+
+        <div class="table-shell">
+          <table class="register-table" id="registerTable">
+            <thead>
+              <tr>
+                <th data-sort="id">ID <span>↕</span></th>
+                <th data-sort="title">Work item <span>↕</span></th>
+                <th data-sort="workstream">Workstream <span>↕</span></th>
+                <th data-sort="owner">Owner <span>↕</span></th>
+                <th data-sort="status">Status <span>↕</span></th>
+                <th data-sort="risk">Risk <span>↕</span></th>
+                <th data-sort="due">Due <span>↕</span></th>
+                <th data-sort="progress">Progress <span>↕</span></th>
+              </tr>
+            </thead>
+            <tbody id="registerBody"></tbody>
+          </table>
+          <div class="designed-empty" id="registerEmpty" hidden>
+            <img src="assets/brand/ghm-medallion.png" alt="">
+            <h2>No records match this view</h2>
+            <p>The filters are working. Reset them to restore the complete prototype dataset.</p>
+            <button class="primary-button" data-action="clear-register">Reset filters</button>
+          </div>
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </main>
+  </div>
+
+  <aside class="command-drawer" id="workstreamDrawer" aria-hidden="true">
+    <div class="drawer-scrim" data-action="close-drawer"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-head">
+        <button class="drawer-close" data-action="close-drawer" aria-label="Close workstream">×</button>
+        <div id="drawerHeader"></div>
+      </div>
+      <div class="drawer-metrics" id="drawerMetrics"></div>
+      <div class="drawer-tabs" role="tablist">
+        <button class="active" data-drawer-tab="overview">Overview</button>
+        <button data-drawer-tab="tasks">Tasks</button>
+        <button data-drawer-tab="dependencies">Dependencies</button>
+        <button data-drawer-tab="decisions">Decisions</button>
+      </div>
+      <div class="drawer-content" id="drawerContent"></div>
+    </div>
+  </aside>
+
+  <div class="modal-layer" id="itemModal" aria-hidden="true">
+    <div class="modal-scrim" data-action="close-item"></div>
+    <article class="item-modal" role="dialog" aria-modal="true" aria-labelledby="itemModalTitle">
+      <button class="modal-close" data-action="close-item" aria-label="Close item">×</button>
+      <div id="itemModalContent"></div>
+    </article>
+  </div>
+
+  <div class="modal-layer" id="commandPalette" aria-hidden="true">
+    <div class="modal-scrim" data-action="close-palette"></div>
+    <section class="command-palette" role="dialog" aria-modal="true" aria-labelledby="paletteTitle">
+      <div class="palette-search">
+        <span>⌕</span>
+        <input id="paletteInput" type="search" placeholder="Search workstreams, tasks, owners and commands">
+        <kbd>ESC</kbd>
+      </div>
+      <div class="palette-content" id="paletteContent"></div>
+    </section>
+  </div>
+
+  <div class="modal-layer" id="dataModal" aria-hidden="true">
+    <div class="modal-scrim" data-action="close-data"></div>
+    <section class="data-modal" role="dialog" aria-modal="true" aria-labelledby="dataTitle">
+      <button class="modal-close" data-action="close-data" aria-label="Close data controls">×</button>
+      <p class="eyebrow">Data controls</p>
+      <h2 id="dataTitle">A complete prototype, without accidental blanks.</h2>
+      <p>The default dataset contains 88 detailed work items, 18 workstream dependencies, 12 milestones and four live decisions. A future live-sheet adapter can replace it without changing the UI.</p>
+      <div class="data-option active">
+        <span class="live-dot"></span>
+        <div><strong>Prototype dataset</strong><small>Complete, deterministic and safe for UX approval</small></div>
+        <b>Active</b>
+      </div>
+      <div class="data-option muted">
+        <span class="live-dot"></span>
+        <div><strong>Google Sheet adapter</strong><small>Reserved for the approved production implementation</small></div>
+        <b>Next stage</b>
+      </div>
+      <button class="primary-button full" data-action="close-data">Continue with prototype</button>
+    </section>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

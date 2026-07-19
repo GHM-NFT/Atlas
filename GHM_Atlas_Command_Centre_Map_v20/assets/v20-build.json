@@ -1,0 +1,27 @@
+{
+  "product": "Atlas Command Centre Map",
+  "version": 20,
+  "edition": "Experience Prototype",
+  "default_data": "complete prototype dataset",
+  "counts": {
+    "workstreams": 11,
+    "tasks": 88,
+    "dependencies": 18,
+    "milestones": 12,
+    "decisions": 4
+  },
+  "views": [
+    "overview",
+    "map",
+    "timeline",
+    "register"
+  ],
+  "features": [
+    "command search",
+    "workstream drawer",
+    "item detail",
+    "prototype item entry",
+    "CSV export",
+    "responsive layouts"
+  ]
+}
