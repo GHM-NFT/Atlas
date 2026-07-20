@@ -1,0 +1,31 @@
+/* Atlas v28 unified refinement */
+:root{--atlas-gold:#D6B55A;--atlas-bronze:#B78D3F;--atlas-ink:#071A2F;--atlas-nav:#102742;--atlas-hover:#163655}
+.atlas-logo-button{width:138px;min-width:138px;padding:0 12px;background:transparent;border:0;display:flex;align-items:center;justify-content:center}
+.atlas-logo-button img{display:block;width:112px;height:54px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+.rail-core .rail-icon,.mobile-view-nav button{border:none!important;box-shadow:none!important;background:transparent!important}
+.rail-core .rail-icon.active,.mobile-view-nav button.active{background:transparent!important;border:none!important;box-shadow:none!important}
+.map-view-icon{width:25px;height:25px;display:block;object-fit:contain;transition:transform .18s ease,filter .18s ease}
+.rail-icon:hover .map-view-icon,.rail-icon:focus-visible .map-view-icon,.mobile-view-nav button:hover .map-view-icon{transform:translateY(-1px);filter:drop-shadow(0 0 5px rgba(214,181,90,.35))}
+.atlas-rail{overflow:hidden}
+.rail-signature{position:absolute!important;left:0!important;right:0!important;bottom:0!important;margin:0!important;padding:0!important;height:142px!important;display:flex!important;align-items:flex-end!important;justify-content:center!important;pointer-events:none}
+.rail-signature-rule{display:none!important}
+.rail-signature img{display:block!important;height:138px!important;width:auto!important;max-width:92px!important;object-fit:contain!important;object-position:center bottom!important;margin:0!important;padding:0!important}
+.mobile-menu img{width:32px;height:32px;display:block;object-fit:contain}
+.territory-shortcut img,.mobile-territory-list img{filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.territory-shortcut:hover img,.territory-shortcut:focus-visible img{transform:scale(1.08)}
+.map-zoom-group{display:inline-flex;border:1px solid rgba(214,181,90,.25);border-radius:8px;overflow:hidden}
+.map-zoom-group button{min-width:34px;border:0!important;border-radius:0!important;font-size:20px!important;line-height:1}
+.map-zoom-group button+button{border-left:1px solid rgba(214,181,90,.25)!important}
+#birdMap{touch-action:none;cursor:grab}
+#birdMap:active{cursor:grabbing}
+.overview-hero{position:relative;isolation:isolate;overflow:hidden}
+.overview-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,47,.96) 0%,rgba(7,26,47,.84) 50%,rgba(7,26,47,.42) 100%),url("../assets/hero/Atlas-the-heroes-journey-copy.webp") center/cover no-repeat;z-index:-2;opacity:.55}
+.territory-hero{position:relative;isolation:isolate;overflow:hidden}
+.territory-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,47,.97),rgba(7,26,47,.76)),url("../assets/hero/atlas-blue-map2.webp") center/cover no-repeat;z-index:-2;opacity:.42}
+.signal-card img.wax,.status-wax{object-fit:contain}
+@media(max-width:820px){
+ .atlas-logo-button{width:auto;min-width:0;padding:0 4px}
+ .atlas-logo-button img{width:84px;height:42px}
+ .mobile-menu img{width:30px;height:30px}
+}
+@media(max-height:760px) and (min-width:821px){.rail-signature{height:98px!important}.rail-signature img{height:96px!important}}
