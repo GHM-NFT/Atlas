@@ -1,0 +1,25 @@
+{
+  "version": "29.4",
+  "milestone": "Navigation QA Hardening",
+  "baseline": "v29.3",
+  "date": "2026-07-20",
+  "scope": [
+    "tablet navigation coverage through 970px",
+    "mobile drawer inert and focus management",
+    "browser history and route restoration",
+    "territory-specific deep links",
+    "skip link and route-heading focus",
+    "sticky-header focus offsets",
+    "short-height desktop rail fallback",
+    "mobile logo cascade cleanup",
+    "browser title version correction"
+  ],
+  "preserved": [
+    "approved v29.3 desktop navigation design",
+    "five map modes and active-state styling",
+    "eleven territory shortcuts",
+    "wax mappings",
+    "existing data and application functionality"
+  ],
+  "image_generation": false
+}
