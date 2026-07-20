@@ -1,0 +1,15 @@
+{
+  "version": "v25",
+  "focus": "Dedicated iPhone navigation",
+  "changes": [
+    "Five icon-only map controls fixed in the mobile top bar",
+    "Chosen hamburger control on right side",
+    "Dropdown drawer with SVG icons and words",
+    "11 territory links in a two-column touch layout",
+    "Timeline, Register, Dependencies, Evidence and Decisions in the drawer",
+    "Mobile left rail removed and horizontal overflow constrained",
+    "Desktop v24 navigation retained"
+  ],
+  "items": 248,
+  "territories": 11
+}

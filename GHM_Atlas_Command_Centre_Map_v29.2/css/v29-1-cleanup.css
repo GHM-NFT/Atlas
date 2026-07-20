@@ -1,0 +1,181 @@
+
+/* ==========================================================================
+   GHM Atlas Command Centre v29.1 — proportional navigation and status cleanup
+   Supplied assets only; no generated imagery.
+   ========================================================================== */
+@media (min-width:701px){
+  :root{--rail:96px;--top:88px}
+
+  /* Rail proportions: five modes get deliberate breathing room. */
+  .atlas-rail{
+    width:var(--rail);
+    padding:9px 7px 0;
+  }
+  .rail-core{
+    width:82px;
+    gap:5px;
+  }
+  .rail-core .rail-icon{
+    width:82px;
+    height:62px;
+    min-height:62px;
+    padding:3px 2px 4px;
+    grid-template-rows:42px 14px;
+    border-radius:4px;
+  }
+  .rail-core .rail-icon .map-view-icon{
+    width:45px;
+    height:42px;
+  }
+  .rail-core .rail-icon span{
+    max-width:80px;
+    font-size:8px;
+    line-height:13px;
+    letter-spacing:.055em;
+  }
+  .rail-core .rail-icon:not(.active):not([aria-current="page"]){
+    opacity:.5;
+  }
+  .rail-core .rail-icon:hover,
+  .rail-core .rail-icon:focus-visible{
+    opacity:.8;
+  }
+  .rail-core .rail-icon.active,
+  .rail-core .rail-icon[aria-current="page"]{
+    opacity:1;
+    color:#fff;
+  }
+  .rail-core .rail-icon.active:after,
+  .rail-core .rail-icon[aria-current="page"]:after{
+    content:"";
+    position:absolute;
+    left:17px;right:17px;bottom:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,#f2cf76 22%,#fff0b1 50%,#f2cf76 78%,transparent);
+    box-shadow:0 0 7px rgba(231,190,83,.62);
+  }
+
+  /* Compact supplied column: recognisable, but secondary to navigation. */
+  .rail-column-divider{
+    width:82px;
+    height:49px;
+    flex-basis:49px;
+    margin:8px 0 10px;
+  }
+  .rail-column-divider img{
+    height:47px;
+    max-width:52px;
+  }
+
+  .territory-shortcuts{
+    width:82px;
+    grid-template-columns:repeat(2,35px);
+    grid-auto-rows:32px;
+    gap:5px 8px;
+    padding:0 2px 126px;
+  }
+
+  /* Top bar: closer to the approved mock-up proportions. */
+  .atlas-topbar{
+    left:var(--rail);
+    height:var(--top);
+    grid-template-columns:208px minmax(0,1fr) 166px;
+    gap:8px;
+    padding:0 12px 0 10px;
+  }
+  .atlas-logo-button{
+    width:198px;
+    min-width:198px;
+    height:82px;
+    padding:0 7px;
+  }
+  .atlas-logo-button img{
+    width:174px;
+    height:72px;
+  }
+  .atlas-primary-nav{
+    height:82px;
+    gap:7px;
+  }
+  .nav-major{gap:7px}
+  .nav-major button{
+    min-width:76px;
+    height:36px;
+    padding:0 13px;
+  }
+  .nav-major button span{font-size:8.5px}
+
+  /* The two realistic columns frame the secondary navigation, not dominate it. */
+  .nav-column{
+    width:27px;
+    height:78px;
+    flex:0 0 27px;
+    background-size:auto 74px!important;
+  }
+  .nav-column-start{margin:0 5px 0 2px}
+  .nav-column-end{margin-left:auto;margin-right:3px}
+
+  .nav-minor{
+    gap:1px;
+  }
+  .nav-minor button{
+    height:34px;
+    padding:0 7px;
+    font-size:7.5px;
+    letter-spacing:.04em;
+  }
+  .top-status{
+    padding-right:2px;
+  }
+
+  /* Content starts below the adjusted header consistently. */
+  .atlas-main,
+  main{
+    padding-top:var(--top);
+  }
+
+  /* Correct wax artwork: equal optical size despite differing source canvases. */
+  .signal-card img.wax,
+  .status-wax{
+    width:54px!important;
+    height:54px!important;
+    object-fit:contain;
+    flex:0 0 54px;
+    filter:drop-shadow(0 4px 5px rgba(0,0,0,.48));
+  }
+  .signal-card img[src*="all-items"]{
+    transform:scale(.9);
+  }
+}
+
+@media (min-width:1181px) and (max-width:1500px){
+  .atlas-topbar{grid-template-columns:184px minmax(0,1fr) 144px}
+  .atlas-logo-button{width:176px;min-width:176px}
+  .atlas-logo-button img{width:154px}
+  .nav-major{gap:4px}
+  .nav-major button{min-width:65px;padding-inline:9px}
+  .nav-column{width:24px;flex-basis:24px;background-size:auto 68px!important}
+  .nav-minor button{padding-inline:4px;font-size:7px}
+}
+@media (min-width:701px) and (max-width:1180px){
+  .atlas-topbar{grid-template-columns:164px minmax(0,1fr)}
+  .atlas-logo-button{width:156px;min-width:156px}
+  .atlas-logo-button img{width:142px}
+  .nav-column{width:22px;flex-basis:22px;background-size:auto 64px!important}
+}
+@media (min-width:701px) and (max-height:780px){
+  .rail-core{gap:2px}
+  .rail-core .rail-icon{
+    height:50px;
+    min-height:50px;
+    grid-template-rows:35px 12px;
+  }
+  .rail-core .rail-icon .map-view-icon{width:38px;height:34px}
+  .rail-column-divider{height:39px;flex-basis:39px;margin:5px 0 6px}
+  .rail-column-divider img{height:38px}
+  .territory-shortcuts{grid-auto-rows:27px;gap:3px 8px;padding-bottom:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rail-core .rail-icon.active,
+  .rail-core .rail-icon[aria-current="page"]{animation:none!important}
+}
