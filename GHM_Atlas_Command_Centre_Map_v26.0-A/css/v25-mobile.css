@@ -1,0 +1,103 @@
+
+/* GHM Atlas Command Centre v25 — dedicated mobile navigation */
+.mobile-view-nav,.mobile-nav-panel,.mobile-nav-scrim{display:none}
+.mobile-menu svg,.mobile-view-nav svg,.mobile-project-links svg{
+  fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round
+}
+
+@media(max-width:700px){
+  :root{--rail:0px;--top:58px}
+  html,body{max-width:100%;overflow-x:hidden}
+  body.mobile-nav-open{overflow:hidden}
+  .atlas-rail{display:none!important}
+  .atlas-topbar{
+    left:0;right:0;height:58px;
+    display:grid;grid-template-columns:38px minmax(0,1fr) 40px;
+    align-items:center;gap:4px;padding:0 8px;
+    border-bottom:1px solid rgba(217,174,85,.34);
+    background:rgba(4,13,23,.97);backdrop-filter:blur(16px)
+  }
+  .atlas-wordmark{
+    width:36px;min-width:36px;padding:0;font-size:0!important;
+    border:0;background:transparent
+  }
+  .atlas-wordmark:after{content:"A";font:700 24px Georgia,serif;color:var(--atlas-gold-bright)}
+  .atlas-primary-nav,.top-status{display:none!important}
+  .mobile-view-nav{
+    display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:3px;align-items:center;height:100%
+  }
+  .mobile-view-nav button{
+    width:100%;height:42px;min-width:0;padding:0;border:1px solid transparent;
+    border-radius:7px;background:transparent;color:#d8b35f
+  }
+  .mobile-view-nav button:hover,.mobile-view-nav button:focus-visible,
+  .mobile-view-nav button.active,.mobile-view-nav button[aria-current="page"]{
+    color:#f2d58a;border-color:rgba(217,174,85,.35);background:rgba(217,174,85,.09)
+  }
+  .mobile-view-nav svg{width:23px;height:23px;fill:currentColor;stroke:currentColor;stroke-width:0}
+  .mobile-view-nav button:nth-child(2) svg{fill:none;stroke-width:1.8}
+  .mobile-menu{
+    position:static;display:grid!important;place-items:center;width:40px;height:42px;
+    padding:0;border:1px solid rgba(217,174,85,.35);border-radius:7px;
+    background:rgba(217,174,85,.07);color:#efd17e;font-size:0
+  }
+  .mobile-menu svg{width:24px;height:24px}
+  .mobile-nav-scrim{
+    display:block;position:fixed;inset:58px 0 0;z-index:880;
+    background:rgba(0,0,0,.58);backdrop-filter:blur(2px)
+  }
+  .mobile-nav-scrim[hidden]{display:none}
+  .mobile-nav-panel{
+    display:flex;position:fixed;z-index:900;top:58px;right:0;bottom:0;
+    width:min(88vw,380px);transform:translateX(105%);
+    flex-direction:column;border-left:1px solid rgba(217,174,85,.34);
+    background:linear-gradient(180deg,#071727 0%,#04101b 100%);
+    box-shadow:-24px 0 50px rgba(0,0,0,.48);transition:transform .22s ease
+  }
+  .mobile-nav-panel.open{transform:translateX(0)}
+  .mobile-nav-head{
+    display:flex;justify-content:space-between;align-items:center;padding:17px 16px 13px;
+    border-bottom:1px solid rgba(217,174,85,.2)
+  }
+  .mobile-nav-head span,.mobile-nav-section>p{
+    display:block;color:#b89243;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase
+  }
+  .mobile-nav-head strong{display:block;margin-top:2px;color:#f4e3bb;font:700 23px Georgia,serif}
+  .mobile-nav-head button{
+    width:40px;height:40px;border:1px solid rgba(217,174,85,.28);border-radius:50%;
+    background:transparent;color:#e6c46e;font-size:28px;line-height:1
+  }
+  .mobile-nav-scroll{overflow:auto;padding:14px 14px 28px}
+  .mobile-nav-section{margin-bottom:20px}
+  .mobile-nav-section>p{margin:0 0 9px 3px}
+  .mobile-territory-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mobile-territory-list button,.mobile-project-links button{
+    min-width:0;min-height:54px;display:flex;align-items:center;gap:10px;text-align:left;
+    border:1px solid rgba(217,174,85,.2);border-radius:9px;padding:9px 10px;
+    background:rgba(255,255,255,.025);color:#e6e9eb
+  }
+  .mobile-territory-list button:active,.mobile-project-links button:active{
+    background:rgba(217,174,85,.11);border-color:rgba(217,174,85,.45)
+  }
+  .mobile-territory-list img{width:28px;height:28px;flex:0 0 28px}
+  .mobile-territory-list span{font-size:10px;line-height:1.25}
+  .mobile-project-links{
+    padding-top:16px;border-top:1px solid rgba(217,174,85,.2)
+  }
+  .mobile-project-links button{width:100%;min-height:48px;margin-bottom:7px}
+  .mobile-project-links svg{width:22px;height:22px;flex:0 0 22px;color:#d9ae55}
+  .mobile-project-links span{font-size:12px;letter-spacing:.04em}
+  main{width:100%;min-width:0}
+  .overview-canvas,.page{width:100%;max-width:100%;padding:12px 10px 34px}
+  .overview-hero{grid-template-columns:1fr!important;min-height:0}
+  .hero-emblem-wrap{min-height:240px}
+  .hero-copy{padding:20px 16px 24px}
+  .hero-copy h1{font-size:clamp(30px,10vw,42px)}
+  .overview-command-grid,.signal-grid,.operational-ribbon,.territory-grid,
+  .structure-grid,.block-grid{grid-template-columns:1fr!important}
+  .filters{overflow-x:auto;flex-wrap:nowrap}
+  .filters>*{flex:0 0 auto}
+  .table-wrap{width:100%;overflow:auto;-webkit-overflow-scrolling:touch}
+  .drawer{width:min(94vw,430px)}
+}
