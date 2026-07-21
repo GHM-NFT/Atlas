@@ -1,0 +1,385 @@
+/* ==========================================================================
+   GHM Atlas Command Centre v29.2 — navigation finishing pass
+   Supplied artwork only. No generated imagery.
+   ========================================================================== */
+
+@media (min-width:701px){
+  :root{
+    --rail:96px;
+    --top:96px;
+  }
+
+  /* -----------------------------------------------------------------------
+     Left rail — larger map modes, clearer rhythm, improved active signal.
+     ----------------------------------------------------------------------- */
+  .atlas-rail{
+    width:var(--rail);
+    padding:10px 7px 0;
+  }
+
+  .rail-core{
+    width:82px;
+    gap:8px;
+  }
+
+  .rail-core .rail-icon{
+    position:relative;
+    isolation:isolate;
+    width:82px;
+    height:72px;
+    min-height:72px;
+    padding:3px 2px 4px;
+    grid-template-rows:52px 14px;
+    overflow:visible;
+    opacity:.48;
+    color:#c9a954;
+    transform:translateZ(0);
+    transition:
+      opacity .22s ease,
+      color .22s ease,
+      transform .24s cubic-bezier(.2,.75,.3,1),
+      filter .24s ease;
+  }
+
+  .rail-core .rail-icon .map-view-icon{
+    position:relative;
+    z-index:2;
+    width:54px;
+    height:50px;
+    object-fit:contain;
+    transform-origin:center 58%;
+    filter:
+      saturate(.88)
+      brightness(.9)
+      drop-shadow(0 3px 4px rgba(0,0,0,.76));
+    transition:
+      filter .28s ease,
+      transform .28s cubic-bezier(.2,.75,.3,1);
+  }
+
+  .rail-core .rail-icon span{
+    position:relative;
+    z-index:3;
+    max-width:82px;
+    font-size:8.5px;
+    line-height:13px;
+    letter-spacing:.055em;
+    transition:color .22s ease,text-shadow .22s ease;
+  }
+
+  .rail-core .rail-icon::before{
+    content:"";
+    position:absolute;
+    z-index:0;
+    left:50%;
+    top:2px;
+    width:70px;
+    height:58px;
+    transform:translateX(-50%) scale(.92);
+    border-radius:50%;
+    opacity:0;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse at center,
+        rgba(255,226,141,.25) 0%,
+        rgba(225,177,61,.13) 38%,
+        rgba(183,141,63,.045) 59%,
+        transparent 76%);
+    filter:blur(3px);
+  }
+
+  .rail-core .rail-icon:hover,
+  .rail-core .rail-icon:focus-visible{
+    opacity:.8;
+    color:#ead080;
+    transform:translateY(-1px);
+  }
+  .rail-core .rail-icon:hover .map-view-icon,
+  .rail-core .rail-icon:focus-visible .map-view-icon{
+    filter:
+      saturate(1)
+      brightness(1.04)
+      drop-shadow(0 3px 4px rgba(0,0,0,.76))
+      drop-shadow(0 0 5px rgba(231,190,83,.28));
+  }
+
+  .rail-core .rail-icon.active,
+  .rail-core .rail-icon[aria-current="page"]{
+    opacity:1;
+    color:#fff;
+    filter:none;
+    animation:atlasModeSettleV292 .56s cubic-bezier(.18,.76,.24,1);
+  }
+
+  .rail-core .rail-icon.active::before,
+  .rail-core .rail-icon[aria-current="page"]::before{
+    opacity:.9;
+    animation:atlasModeGlowV292 3.2s ease-in-out infinite;
+  }
+
+  .rail-core .rail-icon.active .map-view-icon,
+  .rail-core .rail-icon[aria-current="page"] .map-view-icon{
+    transform:translateY(-1px) scale(1.025);
+    filter:
+      saturate(1.08)
+      brightness(1.14)
+      contrast(1.035)
+      drop-shadow(0 3px 4px rgba(0,0,0,.78))
+      drop-shadow(0 0 5px rgba(255,226,141,.72))
+      drop-shadow(0 0 12px rgba(205,151,41,.34));
+  }
+
+  .rail-core .rail-icon.active span,
+  .rail-core .rail-icon[aria-current="page"] span{
+    color:#fff;
+    text-shadow:
+      0 1px 2px rgba(0,0,0,.95),
+      0 0 5px rgba(255,232,165,.48),
+      0 0 10px rgba(214,181,90,.24);
+  }
+
+  .rail-core .rail-icon.active::after,
+  .rail-core .rail-icon[aria-current="page"]::after{
+    left:14px;
+    right:14px;
+    bottom:-2px;
+    height:1px;
+    background:linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(230,183,68,.35) 13%,
+      #f2ce72 34%,
+      #fff0b1 50%,
+      #f2ce72 66%,
+      rgba(230,183,68,.35) 87%,
+      transparent 100%
+    );
+    box-shadow:
+      0 0 4px rgba(255,230,149,.72),
+      0 0 9px rgba(214,181,90,.38);
+  }
+
+  @keyframes atlasModeSettleV292{
+    0%{transform:translateY(2px) scale(.975);opacity:.72}
+    58%{transform:translateY(-2px) scale(1.025);opacity:1}
+    100%{transform:translateY(0) scale(1);opacity:1}
+  }
+
+  @keyframes atlasModeGlowV292{
+    0%,100%{opacity:.64;transform:translateX(-50%) scale(.94)}
+    50%{opacity:1;transform:translateX(-50%) scale(1.025)}
+  }
+
+  /* Supplied left-column asset, now framed by a fine rule and real breathing room. */
+  .rail-column-divider{
+    position:relative;
+    width:82px;
+    height:66px;
+    flex:0 0 66px;
+    margin:14px 0 16px;
+    display:grid;
+    grid-template-columns:minmax(10px,1fr) auto minmax(10px,1fr);
+    align-items:center;
+    gap:6px;
+    overflow:visible;
+    background:none!important;
+    filter:none;
+  }
+
+  .rail-column-divider::before,
+  .rail-column-divider::after{
+    content:"";
+    display:block!important;
+    position:static;
+    width:auto;
+    height:1px;
+    background:linear-gradient(
+      90deg,
+      transparent,
+      rgba(214,181,90,.58)
+    );
+    box-shadow:0 0 4px rgba(214,181,90,.16);
+  }
+
+  .rail-column-divider::after{
+    background:linear-gradient(
+      90deg,
+      rgba(214,181,90,.58),
+      transparent
+    );
+  }
+
+  .rail-column-divider img{
+    display:block!important;
+    width:auto;
+    height:43px;
+    max-width:35px;
+    object-fit:contain;
+    filter:
+      drop-shadow(0 4px 4px rgba(0,0,0,.65))
+      drop-shadow(0 0 3px rgba(214,181,90,.12));
+  }
+
+  /* -----------------------------------------------------------------------
+     Top bar — larger cropped wordmark and smaller architectural columns.
+     Right column intentionally follows the status typography.
+     ----------------------------------------------------------------------- */
+  .atlas-topbar{
+    left:var(--rail);
+    height:var(--top);
+    grid-template-columns:250px minmax(0,1fr) 180px 22px;
+    column-gap:9px;
+    padding:0 11px 0 12px;
+  }
+
+  .atlas-logo-button{
+    width:240px;
+    min-width:240px;
+    height:90px;
+    padding:0 4px;
+    justify-content:flex-start;
+    overflow:visible;
+  }
+
+  .atlas-logo-button img{
+    width:225px;
+    height:auto;
+    max-height:82px;
+    object-fit:contain;
+    object-position:left center;
+    filter:
+      drop-shadow(0 4px 7px rgba(0,0,0,.66))
+      drop-shadow(0 0 6px rgba(214,181,90,.2));
+  }
+
+  .atlas-primary-nav{
+    min-width:0;
+    width:100%;
+    height:88px;
+    gap:8px;
+  }
+
+  .nav-column{
+    width:21px;
+    height:58px;
+    flex:0 0 21px;
+    background:
+      url("../assets/brand/top-nav-column-v29.png")
+      center/auto 56px no-repeat!important;
+    filter:
+      drop-shadow(0 4px 4px rgba(0,0,0,.64))
+      drop-shadow(0 0 2px rgba(214,181,90,.1));
+  }
+
+  .nav-column-start{
+    margin:0 7px 0 3px;
+  }
+
+  .top-status{
+    min-width:0;
+    align-self:center;
+    justify-self:end;
+    padding:0;
+    text-align:right;
+  }
+
+  .nav-column-end{
+    grid-column:4;
+    justify-self:end;
+    margin:0;
+  }
+}
+
+/* Mid-width desktop keeps the corrected hierarchy without crowding. */
+@media (min-width:1181px) and (max-width:1500px){
+  .atlas-topbar{
+    grid-template-columns:215px minmax(0,1fr) 148px 20px;
+    column-gap:7px;
+    padding-inline:8px;
+  }
+  .atlas-logo-button{
+    width:207px;
+    min-width:207px;
+  }
+  .atlas-logo-button img{
+    width:198px;
+    max-height:76px;
+  }
+  .nav-column{
+    width:19px;
+    flex-basis:19px;
+    height:54px;
+    background-size:auto 52px!important;
+  }
+  .nav-major{gap:4px}
+  .nav-major button{min-width:65px;padding-inline:9px}
+  .nav-minor button{padding-inline:4px;font-size:7px}
+}
+
+/* Compact desktop/tablet: retain the logo scale, simplify secondary content first. */
+@media (min-width:701px) and (max-width:1180px){
+  .atlas-topbar{
+    grid-template-columns:194px minmax(0,1fr);
+    gap:6px;
+    padding-inline:7px;
+  }
+  .atlas-logo-button{
+    width:188px;
+    min-width:188px;
+  }
+  .atlas-logo-button img{
+    width:180px;
+    max-height:72px;
+  }
+  .top-status,
+  .nav-column-end{
+    display:none;
+  }
+  .nav-column{
+    width:18px;
+    flex-basis:18px;
+    height:50px;
+    background-size:auto 49px!important;
+  }
+}
+
+/* Short viewports preserve access to every control. */
+@media (min-width:701px) and (max-height:840px){
+  .rail-core{gap:3px}
+  .rail-core .rail-icon{
+    height:58px;
+    min-height:58px;
+    grid-template-rows:42px 13px;
+  }
+  .rail-core .rail-icon .map-view-icon{
+    width:46px;
+    height:40px;
+  }
+  .rail-column-divider{
+    height:50px;
+    flex-basis:50px;
+    margin:7px 0 8px;
+  }
+  .rail-column-divider img{
+    height:36px;
+    max-width:30px;
+  }
+  .territory-shortcuts{
+    grid-auto-rows:27px;
+    gap:3px 8px;
+    padding-bottom:90px;
+  }
+  .territory-shortcut{height:27px}
+  .territory-shortcut img{width:20px;height:20px}
+  .rail-signature{height:88px!important}
+  .rail-signature img{height:87px!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .rail-core .rail-icon,
+  .rail-core .rail-icon::before,
+  .rail-core .rail-icon .map-view-icon{
+    animation:none!important;
+    transition:none!important;
+  }
+}

@@ -1,0 +1,349 @@
+/* ==========================================================================
+   GHM Atlas Command Centre v29.4 — Navigation QA hardening
+   Responsive coverage, keyboard safety, route focus and short-height resilience.
+   Supplied artwork only. No generated imagery.
+   ========================================================================== */
+
+:root{
+  --atlas-focus:#f2d487;
+  --atlas-header-offset:112px;
+}
+
+html{
+  scroll-padding-top:var(--atlas-header-offset);
+}
+
+[id],
+.view h1{
+  scroll-margin-top:var(--atlas-header-offset);
+}
+
+.skip-link{
+  position:fixed;
+  z-index:2000;
+  top:8px;
+  left:12px;
+  transform:translateY(-160%);
+  padding:10px 14px;
+  border:1px solid rgba(242,212,135,.82);
+  border-radius:6px;
+  background:#071a2f;
+  color:#fff4d2;
+  font:700 12px/1.2 Arial,sans-serif;
+  letter-spacing:.035em;
+  box-shadow:0 8px 24px rgba(0,0,0,.48);
+  transition:transform .16s ease;
+}
+.skip-link:focus{
+  transform:translateY(0);
+  outline:2px solid var(--atlas-focus);
+  outline-offset:2px;
+}
+
+.sr-only{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+
+.view h1[tabindex="-1"]:focus{
+  outline:2px solid rgba(242,212,135,.82);
+  outline-offset:7px;
+  border-radius:2px;
+}
+
+/* Closed drawers are not clickable or visible to keyboard users. */
+.mobile-nav-panel{
+  visibility:hidden;
+  pointer-events:none;
+}
+.mobile-nav-panel.open{
+  visibility:visible;
+  pointer-events:auto;
+}
+.mobile-nav-panel[inert]{
+  pointer-events:none!important;
+}
+
+/* Explicit focus treatment across the shared shell. */
+.atlas-topbar button:focus-visible,
+.atlas-rail button:focus-visible,
+.mobile-nav-panel button:focus-visible{
+  outline:2px solid var(--atlas-focus)!important;
+  outline-offset:3px!important;
+}
+
+/* --------------------------------------------------------------------------
+   Compact tablet/mobile shell.
+   The command-centre destinations remain available from 320px through 970px.
+   -------------------------------------------------------------------------- */
+@media (max-width:970px){
+  :root{
+    --rail:0px;
+    --top:64px;
+    --atlas-header-offset:80px;
+  }
+
+  html,
+  body{
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  body.mobile-nav-open{
+    overflow:hidden;
+    overscroll-behavior:none;
+  }
+
+  .atlas-rail{
+    display:none!important;
+  }
+
+  .atlas-topbar{
+    left:0!important;
+    right:0!important;
+    width:auto!important;
+    height:64px!important;
+    display:grid!important;
+    grid-template-columns:76px minmax(0,1fr) 44px!important;
+    align-items:center!important;
+    gap:5px!important;
+    padding:0 8px!important;
+    border-top:2px solid rgba(230,190,91,.9)!important;
+    border-bottom:1px solid rgba(217,174,85,.34)!important;
+    background:
+      linear-gradient(180deg,rgba(12,31,49,.98),rgba(4,13,23,.985))!important;
+    backdrop-filter:blur(16px);
+  }
+
+  .atlas-logo-button,
+  .atlas-wordmark{
+    display:flex!important;
+    width:72px!important;
+    min-width:72px!important;
+    height:58px!important;
+    padding:0!important;
+    justify-content:flex-start!important;
+    border:0!important;
+    background:transparent!important;
+    overflow:visible!important;
+  }
+
+  .atlas-wordmark::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  .atlas-logo-button img{
+    display:block!important;
+    width:70px!important;
+    height:auto!important;
+    max-height:50px!important;
+    object-fit:contain!important;
+    object-position:left center!important;
+  }
+
+  .atlas-primary-nav,
+  .top-status,
+  .nav-column-end{
+    display:none!important;
+  }
+
+  .mobile-view-nav{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:2px!important;
+    align-items:center!important;
+    min-width:0!important;
+    height:100%!important;
+  }
+
+  .mobile-view-nav button{
+    position:relative!important;
+    width:100%!important;
+    min-width:0!important;
+    height:46px!important;
+    padding:0!important;
+    border:1px solid transparent!important;
+    border-radius:7px!important;
+    background:transparent!important;
+    opacity:.58;
+  }
+
+  .mobile-view-nav .map-view-icon{
+    width:30px!important;
+    height:30px!important;
+  }
+
+  .mobile-view-nav button:hover,
+  .mobile-view-nav button:focus-visible{
+    opacity:.86;
+    border-color:rgba(217,174,85,.28)!important;
+    background:rgba(217,174,85,.055)!important;
+  }
+
+  .mobile-view-nav button.active,
+  .mobile-view-nav button[aria-current="page"]{
+    opacity:1;
+    border-color:transparent!important;
+    background:transparent!important;
+  }
+
+  .mobile-view-nav button::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:2px;
+    width:0;
+    height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg,transparent,#efc76c 22%,#fff0af 50%,#efc76c 78%,transparent);
+    box-shadow:0 0 6px rgba(239,199,108,.62);
+    transition:width .18s ease;
+  }
+
+  .mobile-view-nav button.active::after,
+  .mobile-view-nav button[aria-current="page"]::after{
+    width:26px;
+  }
+
+  .mobile-menu{
+    position:static!important;
+    display:grid!important;
+    place-items:center!important;
+    width:42px!important;
+    height:46px!important;
+    padding:0!important;
+    border:1px solid rgba(217,174,85,.36)!important;
+    border-radius:7px!important;
+    background:rgba(217,174,85,.07)!important;
+    color:#efd17e!important;
+    font-size:0!important;
+  }
+
+  .mobile-menu img{
+    width:30px!important;
+    height:30px!important;
+  }
+
+  .mobile-nav-scrim{
+    display:block!important;
+    position:fixed!important;
+    inset:64px 0 0!important;
+    z-index:880!important;
+    background:rgba(0,0,0,.58)!important;
+    backdrop-filter:blur(2px);
+  }
+  .mobile-nav-scrim[hidden]{
+    display:none!important;
+  }
+
+  .mobile-nav-panel{
+    display:flex!important;
+    position:fixed!important;
+    z-index:900!important;
+    top:64px!important;
+    right:0!important;
+    bottom:0!important;
+    width:min(88vw,400px)!important;
+    transform:translateX(105%);
+    flex-direction:column!important;
+    border-left:1px solid rgba(217,174,85,.34)!important;
+    background:linear-gradient(180deg,#071727 0%,#04101b 100%)!important;
+    box-shadow:-24px 0 50px rgba(0,0,0,.48)!important;
+    transition:transform .22s ease,visibility 0s linear .22s;
+  }
+
+  .mobile-nav-panel.open{
+    transform:translateX(0);
+    transition:transform .22s ease,visibility 0s linear 0s;
+  }
+
+  main,
+  .ethos-footer{
+    margin-left:0!important;
+  }
+
+  main{
+    width:100%!important;
+    min-width:0!important;
+    padding-top:64px!important;
+  }
+}
+
+@media (max-width:420px){
+  .atlas-topbar{
+    grid-template-columns:54px minmax(0,1fr) 42px!important;
+    gap:3px!important;
+    padding-inline:6px!important;
+  }
+
+  .atlas-logo-button,
+  .atlas-wordmark{
+    width:52px!important;
+    min-width:52px!important;
+  }
+
+  .atlas-logo-button img{
+    width:50px!important;
+    max-height:44px!important;
+  }
+
+  .mobile-view-nav{
+    gap:0!important;
+  }
+
+  .mobile-view-nav button{
+    height:44px!important;
+  }
+
+  .mobile-view-nav .map-view-icon{
+    width:27px!important;
+    height:27px!important;
+  }
+
+  .mobile-menu{
+    width:40px!important;
+    height:44px!important;
+  }
+}
+
+/* Short desktop heights: keep every rail destination reachable without
+   changing the approved normal-height composition. */
+@media (min-width:971px) and (max-height:820px){
+  .atlas-rail{
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    overscroll-behavior:contain;
+    scrollbar-width:thin!important;
+    scrollbar-color:rgba(214,181,90,.48) transparent;
+    scroll-padding-block:12px 132px;
+  }
+
+  .atlas-rail::-webkit-scrollbar{
+    display:block!important;
+    width:4px;
+  }
+  .atlas-rail::-webkit-scrollbar-thumb{
+    background:rgba(214,181,90,.42);
+    border-radius:4px;
+  }
+
+  .territory-shortcuts{
+    padding-bottom:132px!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .skip-link,
+  .mobile-nav-panel,
+  .mobile-view-nav button::after{
+    transition:none!important;
+  }
+}

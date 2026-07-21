@@ -1,0 +1,14 @@
+{
+  "version": "29.3",
+  "milestone": "Wordmark proportion and top-nav spacing",
+  "baseline": "v29.2",
+  "date": "2026-07-20",
+  "notes": [
+    "Reduced the supplied Atlas wordmark to the approved visual proportion.",
+    "Kept the displayed wordmark at or below the native 148 pixel source width for improved sharpness.",
+    "Added more space after the five primary map buttons.",
+    "Shifted the centre decorative column slightly right while preserving navigation order and functionality.",
+    "Preserved v29.2 map mode sizing, active glow, wax mappings, mobile navigation and all existing application behaviour.",
+    "No generated imagery."
+  ]
+}

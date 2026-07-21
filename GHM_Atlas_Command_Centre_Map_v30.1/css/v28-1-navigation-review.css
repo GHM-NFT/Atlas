@@ -1,0 +1,161 @@
+
+/* GHM Atlas v28.1 — desktop navigation review */
+@media (min-width: 701px){
+  :root{--top:122px}
+
+  .atlas-topbar{
+    grid-template-columns:210px minmax(700px,1fr) 176px;
+    gap:20px;
+    padding:10px 22px 10px 24px;
+    background:
+      radial-gradient(circle at 18% 0%,rgba(35,68,98,.16),transparent 42%),
+      linear-gradient(180deg,rgba(8,26,45,.992),rgba(4,14,25,.985) 72%,rgba(3,11,20,.995)),
+      url("../assets/brand/atlas-map.webp") center 7%/cover;
+    border-top:3px solid #d3a84a;
+    border-bottom:1px solid rgba(224,183,91,.52);
+    box-shadow:0 14px 34px rgba(0,0,0,.4),inset 0 1px rgba(255,224,147,.14);
+  }
+  .atlas-topbar:after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;
+    background-image:
+      repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px),
+      radial-gradient(circle at 70% 20%,rgba(214,181,90,.09),transparent 34%);
+    mix-blend-mode:screen;
+  }
+
+  .atlas-logo-button{
+    position:relative;z-index:1;width:190px;min-width:190px;height:98px;
+    padding:0 4px;justify-content:flex-start;
+  }
+  .atlas-logo-button img{
+    width:168px;height:92px;object-fit:contain;object-position:left center;
+    filter:drop-shadow(0 3px 8px rgba(0,0,0,.62)) drop-shadow(0 0 7px rgba(214,181,90,.16));
+  }
+
+  .atlas-primary-nav{
+    z-index:1;width:min(100%,1080px);height:96px;
+    padding:8px 18px;gap:14px;border-radius:7px;
+    background:
+      linear-gradient(180deg,rgba(13,29,45,.93),rgba(5,15,26,.98)),
+      radial-gradient(circle at 48% 0%,rgba(214,181,90,.08),transparent 48%);
+  }
+
+  .nav-major{gap:12px;height:82px;align-items:center}
+  .nav-major button{
+    width:88px;height:78px;padding:7px 5px 8px;border:0;border-radius:0;
+    display:grid;grid-template-rows:42px auto;place-items:center;
+    background:transparent;box-shadow:none;overflow:visible;
+    color:#cfad60;
+  }
+  .nav-major button img{
+    width:38px;height:38px;display:block;object-fit:contain;
+    opacity:.82;transform:translateY(0) scale(1);
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.7));
+    transition:opacity .18s ease,transform .22s ease,filter .22s ease;
+  }
+  .nav-major button span{
+    position:relative;display:block;padding-bottom:7px;
+    font-size:9px;line-height:1;letter-spacing:.075em;text-transform:uppercase;
+  }
+  .nav-major button span:after{
+    content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg,transparent,#f0ca70 22%,#f8dc91 50%,#f0ca70 78%,transparent);
+    box-shadow:0 0 7px rgba(240,202,112,.7);
+    transition:width .22s ease;
+  }
+  .nav-major button:hover,.nav-major button:focus-visible,
+  .nav-major button.active{
+    color:#f1cf7d;background:transparent;border:0;box-shadow:none;text-shadow:none;
+  }
+  .nav-major button:hover img,.nav-major button:focus-visible img{
+    opacity:1;transform:translateY(-2px);
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.7)) drop-shadow(0 0 7px rgba(214,181,90,.42));
+  }
+  .nav-major button.active img{
+    opacity:1;
+    animation:atlasIconSettle .48s cubic-bezier(.2,.75,.3,1);
+    filter:brightness(1.08) drop-shadow(0 2px 3px rgba(0,0,0,.72)) drop-shadow(0 0 9px rgba(240,202,112,.58));
+  }
+  .nav-major button.active span:after{width:56px}
+
+  @keyframes atlasIconSettle{
+    0%{transform:translateY(2px) scale(.97);opacity:.72}
+    55%{transform:translateY(-2px) scale(1.035);opacity:1}
+    100%{transform:translateY(0) scale(1);opacity:1}
+  }
+
+  .nav-column{
+    width:48px;height:94px;flex:0 0 48px;
+    background:url("../assets/brand/nav-column.png") center/44px 94px no-repeat;
+    filter:sepia(.18) saturate(1.12) brightness(1.03) contrast(1.04)
+      drop-shadow(0 5px 5px rgba(0,0,0,.6)) drop-shadow(0 0 4px rgba(214,181,90,.16));
+  }
+
+  .nav-minor{gap:3px}
+  .nav-minor button{height:40px;padding-inline:8px}
+
+  .rail-column-divider{
+    width:94px;height:64px;flex-basis:64px;margin:13px 0 14px;
+    display:grid;place-items:center;overflow:visible;
+  }
+  .rail-column-divider:before,.rail-column-divider:after{display:none}
+  .rail-column-divider img{display:none}
+  .rail-column-divider{
+    background:url("../assets/brand/nav-column.png") center/31px 62px no-repeat;
+    filter:sepia(.18) saturate(1.1) brightness(1.01) contrast(1.03)
+      drop-shadow(0 4px 4px rgba(0,0,0,.55));
+  }
+
+  .rail-signature{
+    cursor:pointer;border:0;background:transparent;
+    pointer-events:auto!important;
+  }
+  .rail-signature:focus-visible{
+    outline:1px solid #efc86d;outline-offset:-4px;
+  }
+  .rail-signature img{transition:filter .18s ease,transform .18s ease}
+  .rail-signature:hover img,.rail-signature:focus-visible img{
+    transform:translateY(-1px);
+    filter:drop-shadow(0 8px 12px rgba(0,0,0,.58)) drop-shadow(0 0 7px rgba(214,181,90,.24));
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nav-major button.active img{animation:none!important}
+}
+
+/* Keep the map language on mobile, while prioritising readable touch targets. */
+@media (max-width:700px){
+  .mobile-view-nav button{position:relative}
+  .mobile-view-nav button:after{
+    content:"";position:absolute;left:50%;bottom:2px;width:0;height:1px;
+    transform:translateX(-50%);background:#efc76c;
+    box-shadow:0 0 5px rgba(239,199,108,.55);transition:width .18s ease;
+  }
+  .mobile-view-nav button.active:after,
+  .mobile-view-nav button[aria-current="page"]:after{width:24px}
+  .mobile-view-nav button.active .map-view-icon,
+  .mobile-view-nav button[aria-current="page"] .map-view-icon{
+    filter:drop-shadow(0 0 6px rgba(239,199,108,.45));
+  }
+}
+
+@media (min-width:701px) and (max-width:1180px){
+  .atlas-topbar{grid-template-columns:170px minmax(0,1fr);gap:10px;padding-inline:14px}
+  .top-status{display:none}
+  .atlas-logo-button{width:160px;min-width:160px}
+  .atlas-logo-button img{width:148px}
+  .atlas-primary-nav{width:100%;padding-inline:10px;gap:8px}
+  .nav-major{gap:5px}
+  .nav-major button{width:70px}
+  .nav-column{width:34px;flex-basis:34px;background-size:32px 90px}
+  .nav-minor button{padding-inline:5px;font-size:7px}
+}
+@media (min-width:701px) and (max-width:930px){
+  .nav-minor{display:none}
+  .nav-column{display:none}
+  .atlas-primary-nav{justify-content:center}
+  .nav-major{gap:10px}
+  .nav-major button{width:78px}
+}

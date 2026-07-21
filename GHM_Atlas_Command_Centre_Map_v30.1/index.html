@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GHM Atlas Command Centre v30.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/v24-refinement.css">
+<link rel="stylesheet" href="css/v25-mobile.css">
+<link rel="stylesheet" href="css/v26-navigation.css">
+<link rel="stylesheet" href="css/v28-unified.css">
+<link rel="stylesheet" href="css/v28-1-navigation-review.css">
+<link rel="stylesheet" href="css/v29-navigation.css">
+  <link rel="stylesheet" href="css/v29-1-cleanup.css">
+  <link rel="stylesheet" href="css/v29-2-adjustments.css">
+  <link rel="stylesheet" href="css/v29-3-adjustments.css">
+  <link rel="stylesheet" href="css/v29-4-navigation-qa.css">
+  <link rel="stylesheet" href="css/v30-responsive-command.css">
+  <link rel="stylesheet" href="css/v30-1-consistency.css">
+</head>
+<body>
+<div id="atlasLoader" class="atlas-loader" role="status" aria-live="polite" aria-label="Loading GHM Atlas">
+  <div class="atlas-loader-mark"><img src="assets/brand/command-centre-emblem.png" alt=""></div>
+  <span>Preparing the Atlas</span>
+</div>
+<a id="skipLink" class="skip-link" href="#main-content">Skip to main content</a>
+<div id="routeAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<div class="app">
+<aside class="atlas-rail" id="rail" aria-label="Atlas navigation">
+  <nav class="rail-core" aria-label="Core map views">
+    <button class="rail-icon" data-view="overview" title="Overview" aria-label="Overview"><img class="map-view-icon" src="assets/map-icons-v29/overview.png" alt=""><span>Overview</span></button>
+    <button class="rail-icon" data-view="birdseye" title="Bird’s-eye" aria-label="Bird’s-eye"><img class="map-view-icon" src="assets/map-icons-v29/birdseye.png" alt=""><span>Bird’s-eye</span></button>
+    <button class="rail-icon" data-view="structured" title="Structured" aria-label="Structured"><img class="map-view-icon" src="assets/map-icons-v29/structured.png" alt=""><span>Structured</span></button>
+    <button class="rail-icon" data-view="square" title="Block" aria-label="Block"><img class="map-view-icon" src="assets/map-icons-v29/square.png" alt=""><span>Block</span></button>
+    <button class="rail-icon" data-view="waffle" title="Waffle" aria-label="Waffle"><img class="map-view-icon" src="assets/map-icons-v29/waffle.png" alt=""><span>Waffle</span></button>
+  </nav>
+  <div class="rail-column-divider" aria-hidden="true"><img src="assets/brand/left-nav-column-v29.png" alt=""></div>
+  <nav class="territory-shortcuts" aria-label="Territory quick links">
+    <button class="territory-shortcut" data-open-territory="WS001" title="White Paper" aria-label="White Paper"><img src="assets/nav-svg/ws001.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS002" title="Website" aria-label="Website"><img src="assets/nav-svg/ws002.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS003" title="Pipeline / Technical" aria-label="Pipeline / Technical"><img src="assets/nav-svg/ws003.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS004" title="Video Production" aria-label="Video Production"><img src="assets/nav-svg/ws004.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS005" title="Metadata / Manifest" aria-label="Metadata / Manifest"><img src="assets/nav-svg/ws005.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS006" title="Launch / Market Readiness" aria-label="Launch / Market Readiness"><img src="assets/nav-svg/ws006.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS007" title="Atlas / Story / Portal" aria-label="Atlas / Story / Portal"><img src="assets/nav-svg/ws007.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS008" title="Artwork / Collections" aria-label="Artwork / Collections"><img src="assets/nav-svg/ws008.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS009" title="QA / Review / Decisions" aria-label="QA / Review / Decisions"><img src="assets/nav-svg/ws009.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS010" title="Sources / Library" aria-label="Sources / Library"><img src="assets/nav-svg/ws010.svg" alt=""></button>
+    <button class="territory-shortcut" data-open-territory="WS011" title="Prints / Fulfilment" aria-label="Prints / Fulfilment"><img src="assets/nav-svg/ws011.svg" alt=""></button>
+  </nav>
+  <button class="rail-signature" data-view="overview" title="Return to Overview" aria-label="Return to Overview">
+    <span class="rail-signature-rule" aria-hidden="true"></span>
+    <img src="assets/brand/atlas-rail-figure.png" alt="" aria-hidden="true">
+  </button>
+</aside>
+
+<header class="atlas-topbar">
+  <button class="atlas-wordmark atlas-logo-button" data-view="overview" aria-label="Atlas overview"><img src="assets/brand/atlas-logo-cropped.png" alt="ATLAS"></button>
+
+  <nav class="mobile-view-nav" aria-label="Map views">
+    <button data-view="overview" title="Overview" aria-label="Overview"><img class="map-view-icon" src="assets/map-icons-v29/overview.png" alt=""></button>
+    <button data-view="birdseye" title="Bird’s-eye" aria-label="Bird’s-eye"><img class="map-view-icon" src="assets/map-icons-v29/birdseye.png" alt=""></button>
+    <button data-view="structured" title="Structured" aria-label="Structured"><img class="map-view-icon" src="assets/map-icons-v29/structured.png" alt=""></button>
+    <button data-view="square" title="Block" aria-label="Block"><img class="map-view-icon" src="assets/map-icons-v29/square.png" alt=""></button>
+    <button data-view="waffle" title="Waffle" aria-label="Waffle"><img class="map-view-icon" src="assets/map-icons-v29/waffle.png" alt=""></button>
+  </nav>
+
+  <nav class="atlas-primary-nav" aria-label="Primary navigation">
+    <div class="nav-major" aria-label="Map views">
+      <button data-view="overview" title="Overview"><span>Overview</span></button>
+      <button data-view="birdseye" title="Bird’s-eye"><span>Bird’s-eye</span></button>
+      <button data-view="structured" title="Structured"><span>Structured</span></button>
+      <button data-view="square" title="Block"><span>Block</span></button>
+      <button data-view="waffle" title="Waffle"><span>Waffle</span></button>
+    </div>
+    <span class="nav-column nav-column-start" aria-hidden="true"></span>
+    <div class="nav-minor">
+      <button data-view="territories">Command Index</button>
+      <button data-view="register">Register</button>
+      <button data-view="dependencies">Dependencies</button>
+      <button data-view="evidence">Evidence</button>
+      <button data-view="decisions">Decisions</button>
+    </div>
+  </nav>
+
+  <div class="top-status">
+    <span>COMMAND CENTRE MAP</span>
+    <strong id="visibleItemCount">248 visible items</strong>
+  </div>
+  <span class="nav-column nav-column-end" aria-hidden="true"></span>
+  <button id="mobileMenu" class="mobile-menu" aria-expanded="false" aria-controls="mobileNavPanel" aria-label="Open navigation">
+    <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+</header>
+
+<div id="mobileNavScrim" class="mobile-nav-scrim" hidden></div>
+<aside id="mobileNavPanel" class="mobile-nav-panel" role="dialog" aria-modal="true" aria-labelledby="mobileNavTitle" aria-hidden="true" inert>
+  <div class="mobile-nav-head">
+    <div><span>GHM ATLAS</span><strong id="mobileNavTitle">Navigation</strong></div>
+    <button id="mobileNavClose" aria-label="Close navigation"><span>Close</span><b aria-hidden="true">×</b></button>
+  </div>
+  <div class="mobile-nav-scroll">
+    <section class="mobile-nav-section">
+      <p>Territories</p>
+      <div class="mobile-territory-list">
+        <button data-open-territory="WS001"><img src="assets/nav-svg/ws001.svg" alt=""><span>White Paper</span></button>
+        <button data-open-territory="WS002"><img src="assets/nav-svg/ws002.svg" alt=""><span>Website</span></button>
+        <button data-open-territory="WS003"><img src="assets/nav-svg/ws003.svg" alt=""><span>Pipeline / Technical</span></button>
+        <button data-open-territory="WS004"><img src="assets/nav-svg/ws004.svg" alt=""><span>Video Production</span></button>
+        <button data-open-territory="WS005"><img src="assets/nav-svg/ws005.svg" alt=""><span>Metadata / Manifest</span></button>
+        <button data-open-territory="WS006"><img src="assets/nav-svg/ws006.svg" alt=""><span>Launch / Market Readiness</span></button>
+        <button data-open-territory="WS007"><img src="assets/nav-svg/ws007.svg" alt=""><span>Atlas / Story / Portal</span></button>
+        <button data-open-territory="WS008"><img src="assets/nav-svg/ws008.svg" alt=""><span>Artwork / Collections</span></button>
+        <button data-open-territory="WS009"><img src="assets/nav-svg/ws009.svg" alt=""><span>QA / Review / Decisions</span></button>
+        <button data-open-territory="WS010"><img src="assets/nav-svg/ws010.svg" alt=""><span>Sources / Library</span></button>
+        <button data-open-territory="WS011"><img src="assets/nav-svg/ws011.svg" alt=""><span>Prints / Fulfilment</span></button>
+      </div>
+    </section>
+    <section class="mobile-nav-section mobile-project-links">
+      <p>Command centre</p>
+      <button data-view="territories"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h3M13 8h3M8 12h3M13 12h3M8 16h8"/></svg><span>Command Index</span></button>
+      <button data-view="register"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg><span>Register</span></button>
+      <button data-view="dependencies"><svg viewBox="0 0 24 24"><path d="M7 7h4v4H7zM13 13h4v4h-4zM11 9l2 2"/></svg><span>Dependencies</span></button>
+      <button data-view="evidence"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6zM9 11h6M9 15h6"/></svg><span>Evidence</span></button>
+      <button data-view="decisions"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7zM9 12l2 2 4-5"/></svg><span>Decisions</span></button>
+    </section>
+  </div>
+</aside>
+
+<main id="main-content" tabindex="-1">
+<section class="view active overview-view" data-page="overview">
+  <div class="overview-canvas">
+    <section class="overview-hero">
+      <div class="hero-emblem-wrap">
+        <img class="hero-emblem" src="assets/brand/command-centre-emblem.png" alt="GHM Atlas Command Centre">
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">OVERVIEW 01 · LIVE PROGRAMME VIEW</p>
+        <h1>See the whole Atlas.<br><span>Act on what matters.</span></h1>
+        <p class="hero-lede">A connected operational picture of every territory, dependency, milestone and decision—designed to reveal pressure before it becomes delay.</p>
+        <div class="hero-actions refined-actions">
+          <button class="atlas-cta" data-view="birdseye"><span>Enter Bird’s-eye Map</span><b>→</b></button>
+          <button class="atlas-secondary" data-view="territories"><span>Open Territory Index</span><b>11</b></button>
+        </div>
+        <div class="hero-meta"><span><i></i> Complete prototype dataset</span><span>248 items</span><span>11 territories</span></div>
+      </div>
+    </section>
+
+    <section class="overview-status">
+      <div class="overview-section-title">
+        <div><p>PROGRAMME SIGNALS</p><h2>Current state</h2></div>
+        <span>Live counts open directly into the complete register.</span>
+      </div>
+      <div id="overviewSignals" class="signal-grid"></div>
+    </section>
+
+    <section class="overview-command-grid">
+      <article class="overview-map-panel">
+        <header class="panel-heading">
+          <div><p>LIVE BIRD’S-EYE</p><h2>Territories and dependencies</h2><span>All 248 items are represented as coloured status points.</span></div>
+          <button class="panel-expand" data-view="birdseye">Open full map ↗</button>
+        </header>
+        <div class="overview-map-stage">
+          <svg id="overviewMap" viewBox="0 0 1600 940" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Live Bird’s-eye dependency preview"></svg>
+          <div class="overview-map-legend">
+            <span><i class="c-completed"></i>Complete</span><span><i class="c-active"></i>Active</span>
+            <span><i class="c-review"></i>Review</span><span><i class="c-blocked"></i>Blocked</span><span><i class="c-later"></i>Later</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="territory-pulse-panel">
+        <header class="panel-heading">
+          <div><p>TERRITORY PULSE</p><h2>Where attention is moving</h2><span>Four distinct live territory snapshots.</span></div>
+          <button class="panel-expand" data-view="territories">All territories ↗</button>
+        </header>
+        <div id="territoryPulse" class="territory-pulse-grid"></div>
+      </aside>
+    </section>
+
+    <section class="condensed-territories">
+      <div class="overview-section-title">
+        <div><p>CONDENSED WORKSTREAM OVERVIEW</p><h2>Eleven territories at a glance</h2></div>
+        <button class="panel-expand" data-view="territories">Open structured territory index ↗</button>
+      </div>
+      <div id="territoryCondensed" class="territory-condensed-grid"></div>
+    </section>
+
+    <section class="operational-ribbon">
+      <div class="overview-section-title">
+        <div><p>COMMAND WATCH</p><h2>Next operational moves</h2></div>
+        <span>Milestones, blockers, decisions and evidence requiring attention.</span>
+      </div>
+      <div id="overviewOperations" class="operation-grid"></div>
+    </section>
+  </div>
+</section>
+
+<section class="view map-view" data-page="birdseye">
+  <div class="map-shell" id="mapShell">
+    <div class="map-title">BIRD’S-EYE MAP</div>
+    <div class="map-tools">
+      <div class="map-tool-fields">
+        <label>Layout<select id="mapLayout"><option value="dependency">Dependency</option><option value="territory">Territory</option><option value="workflow">Workflow</option><option value="risk">Risk focus</option></select></label>
+        <label>Status<select id="mapStatus"><option value="all">All statuses</option><option>Completed</option><option>Active</option><option>Review</option><option>Blocked</option><option>Later</option></select></label>
+      </div>
+      <div class="map-quick-actions" aria-label="Quick map views">
+        <button id="quickAll" class="map-icon-action active" title="Show all items" aria-label="Show all items"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg><span>All</span></button>
+        <button id="quickBlocked" class="map-icon-action" title="Show blocked items" aria-label="Show blocked items"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3zM12 9v4M12 16h.01"/></svg><span>Blocked</span></button>
+        <button id="toggleEdges" class="map-icon-action active" title="Toggle connections" aria-label="Toggle connections"><svg viewBox="0 0 24 24"><path d="M7 7h4v4H7zM13 13h4v4h-4zM11 9l2 2"/></svg><span>Links</span></button>
+        <button id="toggleLabels" class="map-icon-action active" title="Toggle labels" aria-label="Toggle labels"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/></svg><span>Labels</span></button>
+        <button id="fitMap" class="map-icon-action" title="Fit map" aria-label="Fit map"><svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg><span>Fit</span></button>
+        <button id="fullscreenMap" class="map-icon-action" title="Full screen" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg><span>Full</span></button>
+      </div>
+      <span class="map-zoom-group" aria-label="Map zoom controls"><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomIn" aria-label="Zoom in">+</button></span>
+    </div>
+    <div class="legend"><span><i class="c-completed"></i>Completed</span><span><i class="c-active"></i>Active</span><span><i class="c-review"></i>Review</span><span><i class="c-blocked"></i>Blocked</span><span><i class="c-later"></i>Later</span><span><b></b>Risk ring</span></div>
+    <svg id="birdMap" viewBox="0 0 1600 940" preserveAspectRatio="xMidYMid slice"></svg>
+    <div class="map-help">Select a territory label for its command chamber · select a coloured dot to inspect an item · scroll to zoom</div>
+  </div>
+</section>
+
+<section class="view" data-page="structured"><div class="page"><div class="heading compact"><div><p>STRUCTURED VIEW</p><h1>Programme structure</h1><span>Workstreams, current actions, dependencies and review states in one ordered view.</span></div></div><div id="structuredBoard" class="structured"></div></div></section>
+<section class="view" data-page="square"><div class="page"><div class="heading compact"><div><p>BLOCK MAP</p><h1>Whole-project block map</h1><span>See all 248 delivery blocks together, then switch to territory sections for focused drill-down.</span></div></div><div id="blockViewControls" class="block-view-controls"></div><div id="squareGrid" class="square-grid"></div></div></section>
+<section class="view" data-page="waffle"><div class="page"><div class="heading compact"><div><p>WAFFLE VIEW</p><h1>Every item, one connected field</h1><span>248 interactive items grouped by workstream, status, ID and progress.</span></div></div><div id="waffleFilters" class="filters"></div><div id="waffleGrid" class="waffle"></div></div></section>
+
+<section class="view" data-page="territories">
+  <div class="page">
+    <div class="heading territory-heading"><div><p>TERRITORY INDEX</p><h1>Eleven operational territories</h1><span>A structured, decision-ready view of where each territory stands, what must happen next, and what is blocking progress.</span></div><div id="territoryIndexSummary" class="data-pill"></div></div>
+    <div id="territoryFilters" class="filters"></div>
+    <div id="territoryIndex" class="territory-index"></div>
+  </div>
+</section>
+
+<section class="view" data-page="territory">
+  <div class="page">
+    <div id="territoryDetail"></div>
+  </div>
+</section>
+
+<section class="view" data-page="timeline"><div class="page"><div class="heading compact"><div><p>MILESTONE HORIZON</p><h1>Delivery milestones and next gates</h1><span>A connected view of milestone groups, delivery pressure and the next dated actions across the programme.</span></div></div><div id="timeline" class="timeline"></div></div></section>
+<section class="view" data-page="register"><div class="page"><div class="heading compact"><div><p>REGISTER</p><h1>Complete item register</h1></div><button id="exportCsv" class="atlas-cta compact-cta"><span>Export CSV</span><b>↓</b></button></div><div id="registerTools" class="filters"></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Item</th><th>Workstream</th><th>Status</th><th>Risk</th><th>Owner</th><th>Due</th><th>Progress</th></tr></thead><tbody id="registerBody"></tbody></table></div></div></section>
+<section class="view command-page dependencies-page" data-page="dependencies"><div class="page"><div class="heading compact"><div><p>DEPENDENCIES</p><h1>Connected delivery chains</h1><span>See which items and territories are carrying downstream delivery risk.</span></div></div><div id="dependencyList" class="cards"></div></div></section>
+<section class="view command-page evidence-page" data-page="evidence"><div class="page"><div class="heading compact"><div><p>EVIDENCE</p><h1>Approval and assurance library</h1><span>Review the evidence trail behind every deliverable and governance gate.</span></div></div><div id="evidenceGrid" class="cards"></div></div></section>
+<section class="view command-page decisions-page" data-page="decisions"><div class="page"><div class="heading compact"><div><p>DECISIONS</p><h1>Decision and governance record</h1><span>Track the choices, owners and due dates that shape delivery across the Atlas.</span></div></div><div id="decisionGrid" class="cards"></div></div></section>
+</main>
+<footer class="ethos-footer" aria-label="Atlas ethos">
+  <div class="ethos-rule"></div>
+  <img src="assets/brand/Ethos-banner.jpg" alt="Truth, Legacy, Creativity, Integrity and Connection">
+  <div class="ethos-rule"></div>
+</footer>
+
+
+<div id="scrim" class="scrim" hidden></div>
+<aside id="drawer" class="drawer" aria-hidden="true"><button id="closeDrawer" class="close">×</button><div id="drawerContent"></div></aside>
+
+<div id="itemModal" class="modal" hidden><div class="modal-card"><button id="closeItem" class="close">×</button><div id="itemContent"></div></div></div>
+<div id="addModal" class="modal" hidden><form id="addForm" class="modal-card"><button type="button" id="closeAdd" class="close">×</button><p class="eyebrow">PROTOTYPE INPUT</p><h2>Add a complete Atlas item</h2><label>Title<input name="title" required></label><label>Workstream<select name="workstream" id="addWs"></select></label><label>Status<select name="status"><option>Active</option><option>Review</option><option>Blocked</option><option>Later</option><option>Completed</option></select></label><label>Owner<input name="owner" required value="Ariadne Vale"></label><label>Due date<input name="due" type="date" required value="2026-09-30"></label><button class="gold" type="submit">Add prototype item</button></form></div>
+<div id="toast" class="toast"></div>
+<script src="js/data.js"></script><script src="js/app.js"></script>
+</div>
+</body></html>
