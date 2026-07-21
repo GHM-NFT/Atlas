@@ -1,0 +1,81 @@
+/* ==========================================================================
+   GHM Atlas Command Centre v29.3 — wordmark proportion and nav spacing
+   Supplied artwork only. No generated imagery.
+   ========================================================================== */
+
+@media (min-width:701px){
+  /* Keep the supplied raster wordmark at or below its native 148px width
+     so it remains crisp while matching the approved visual proportion. */
+  .atlas-topbar{
+    grid-template-columns:182px minmax(0,1fr) 180px 22px;
+  }
+
+  .atlas-logo-button{
+    width:172px;
+    min-width:172px;
+    height:90px;
+    padding:0 7px;
+    overflow:visible;
+  }
+
+  .atlas-logo-button img{
+    width:148px;
+    height:auto;
+    max-height:59px;
+    object-fit:contain;
+    object-position:left center;
+    image-rendering:auto;
+    filter:
+      drop-shadow(0 3px 5px rgba(0,0,0,.64))
+      drop-shadow(0 0 4px rgba(214,181,90,.16));
+  }
+
+  /* Give the primary map buttons a clean visual pause before the
+     centre architectural column and secondary navigation. */
+  .nav-column-start{
+    margin-left:24px;
+    margin-right:7px;
+  }
+}
+
+@media (min-width:1181px) and (max-width:1500px){
+  .atlas-topbar{
+    grid-template-columns:172px minmax(0,1fr) 148px 20px;
+  }
+
+  .atlas-logo-button{
+    width:164px;
+    min-width:164px;
+  }
+
+  .atlas-logo-button img{
+    width:144px;
+    max-height:58px;
+  }
+
+  .nav-column-start{
+    margin-left:18px;
+    margin-right:6px;
+  }
+}
+
+@media (min-width:701px) and (max-width:1180px){
+  .atlas-topbar{
+    grid-template-columns:152px minmax(0,1fr);
+  }
+
+  .atlas-logo-button{
+    width:146px;
+    min-width:146px;
+  }
+
+  .atlas-logo-button img{
+    width:136px;
+    max-height:54px;
+  }
+
+  .nav-column-start{
+    margin-left:13px;
+    margin-right:5px;
+  }
+}

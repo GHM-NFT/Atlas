@@ -1,0 +1,24 @@
+{
+  "version": "30.0",
+  "milestone": "Responsive & Command-Centre Consolidation",
+  "baseline": "v29.4",
+  "date": "2026-07-21",
+  "scope": [
+    "responsive navigation and full-screen mobile menu",
+    "whole-project and by-territory block map",
+    "Bird's-eye wheel, drag and pinch interaction",
+    "Waffle search and quick status views",
+    "territory index and detail polish",
+    "Milestone Horizon redesign",
+    "Dependencies, Evidence and Decisions redesign",
+    "drawer and modal styling repair",
+    "loader, typography and replacement Ethos banner",
+    "dynamic route/link binding fixes"
+  ],
+  "navigation_change": "Timeline label replaced by Command Index linking to Territory Index",
+  "fonts": [
+    "Cormorant Garamond",
+    "Inter"
+  ],
+  "image_generation": false
+}

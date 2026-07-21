@@ -1,0 +1,12 @@
+{
+  "version": "29.1",
+  "milestone": "Navigation proportional cleanup and correct wax mapping",
+  "date": "2026-07-20",
+  "notes": [
+    "Increased breathing room around the five left-rail map modes.",
+    "Retuned logo, top navigation, and both supplied column assets to the approved mock-up proportions.",
+    "Preserved 50% inactive map-mode treatment and active white label, glow, underline, and subtle animation.",
+    "Corrected All items, Active, At risk, Blocked, Review, and Completed wax artwork mappings.",
+    "No generated imagery; supplied assets only."
+  ]
+}
