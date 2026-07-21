@@ -1,0 +1,648 @@
+/* ==========================================================================
+   GHM Atlas Command Centre v30.1
+   Cross-application styling consistency and Block Map refinement
+   ========================================================================== */
+
+:root{
+  --atlas-surface-1:linear-gradient(145deg,#0d2439 0%,#071522 100%);
+  --atlas-surface-2:linear-gradient(145deg,#102b45 0%,#081725 100%);
+  --atlas-border:rgba(214,181,90,.24);
+  --atlas-border-strong:rgba(241,210,125,.52);
+  --atlas-shadow:0 18px 38px rgba(0,0,0,.24);
+  --atlas-radius:10px;
+}
+
+/* --------------------------------------------------------------------------
+   One hierarchy across every page
+   -------------------------------------------------------------------------- */
+:is(.view,.drawer,.modal-card) :is(h1,h2,h3,h4),
+:is(.signal-card,.block-status-strip,.block-stats,.territory-kpis,.drawer-summary,
+    .command-summary-grid,.milestone-summary,.data-pill,.status-distribution) strong{
+  font-family:var(--font-display)!important;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+
+:is(.eyebrow,.ws-code,.micro-label,.heading>div>p,.panel-head p,.panel-heading p,
+    .overview-section-title p,.project-block-field>header p,.block-signal-copy small,
+    .block-signal-copy em,.command-summary-grid span,.milestone-summary span,
+    .territory-kpis span,.drawer-summary span,table th){
+  font-family:var(--font-ui)!important;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+:is(.heading,.panel-heading,.panel-head,.overview-section-title) h2{
+  letter-spacing:-.018em;
+}
+
+:is(.panel,.card,.structure-card,.territory-card,.command-card,.milestone-card,
+    .project-block-field,.block-card,.drawer-command,.modal-card .card){
+  border-color:var(--atlas-border)!important;
+  background:var(--atlas-surface-1)!important;
+  box-shadow:var(--atlas-shadow);
+}
+
+:is(.panel,.structure-card,.territory-card,.command-card,.milestone-card,
+    .project-block-field,.block-card,.drawer-command,.modal-card .card){
+  border-radius:var(--atlas-radius)!important;
+}
+
+/* Large data remains editorial; dense explanatory text remains UI sans. */
+:is(.signal-card,.block-status-strip,.block-stats,.territory-kpis,.drawer-summary,
+    .command-summary-grid,.milestone-summary,.data-pill,.status-distribution) strong{
+  color:#fff;
+  line-height:.95;
+}
+
+:is(.signal-card,.block-status-strip,.block-stats,.territory-kpis,.drawer-summary,
+    .command-summary-grid,.milestone-summary,.data-pill,.status-distribution) small,
+:is(.signal-card,.block-status-strip,.block-stats,.territory-kpis,.drawer-summary,
+    .command-summary-grid,.milestone-summary,.data-pill,.status-distribution) span{
+  font-family:var(--font-ui);
+}
+
+/* --------------------------------------------------------------------------
+   Shared action language
+   -------------------------------------------------------------------------- */
+:is(.panel-expand,.link-btn,.back-link,.project-block-field>footer button,
+    .block-footer button,.structure-card header button,.dependency-columns button){
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 13px;
+  border:1px solid rgba(214,181,90,.38)!important;
+  border-radius:5px!important;
+  background:linear-gradient(180deg,rgba(16,39,66,.86),rgba(6,19,33,.96))!important;
+  color:var(--gold-bright)!important;
+  font:700 9px/1 var(--font-ui)!important;
+  letter-spacing:.085em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,color .16s ease;
+}
+
+:is(.panel-expand,.link-btn,.back-link,.project-block-field>footer button,
+    .block-footer button,.structure-card header button,.dependency-columns button):hover{
+  transform:translateY(-1px);
+  border-color:var(--atlas-border-strong)!important;
+  color:#fff!important;
+  box-shadow:0 8px 18px rgba(0,0,0,.24),0 0 14px rgba(214,181,90,.10);
+}
+
+:is(.hero-actions,.territory-card footer,.block-footer) button{
+  min-height:44px;
+}
+
+:is(#exportCsv,.drawer-full,.modal-territory){
+  width:auto!important;
+  min-width:150px!important;
+  max-width:100%!important;
+}
+
+/* Filter controls use a compact, consistent operational style. */
+:is(.filters,.territory-status-filters,.drawer-tabs,.block-mode-switch) button{
+  font-family:var(--font-ui)!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+:is(.filters,.territory-status-filters,.drawer-tabs) button.active{
+  color:#fff!important;
+  border-color:var(--gold)!important;
+  background:#102742!important;
+  box-shadow:inset 0 -2px 0 var(--gold),0 0 14px rgba(214,181,90,.08);
+}
+
+:is(input,select,textarea){
+  border:1px solid rgba(214,181,90,.28)!important;
+  border-radius:6px!important;
+  background:#061522!important;
+  color:#fff!important;
+}
+
+:is(input,select,textarea):hover{
+  border-color:rgba(214,181,90,.48)!important;
+}
+
+/* --------------------------------------------------------------------------
+   Block Map — current-state quality controls
+   -------------------------------------------------------------------------- */
+.block-view-controls{
+  gap:14px;
+  margin-bottom:20px;
+}
+
+.block-mode-switch{
+  display:inline-grid;
+  grid-template-columns:repeat(2,minmax(142px,1fr));
+  width:max-content;
+  max-width:100%;
+  padding:4px;
+  border:1px solid rgba(214,181,90,.34);
+  border-radius:7px;
+  background:#050f1a;
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+}
+
+.block-mode-switch button{
+  min-height:43px;
+  padding:0 18px;
+  border:1px solid transparent!important;
+  border-radius:4px!important;
+  color:var(--muted);
+  background:transparent!important;
+}
+
+.block-mode-switch button:hover{
+  color:#fff;
+  background:rgba(16,39,66,.64)!important;
+}
+
+.block-mode-switch button.active{
+  color:#1c1306!important;
+  border-color:#f1d27d!important;
+  background:linear-gradient(180deg,#f0cf78 0%,#bd8628 60%,#8f5e1b 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 7px 17px rgba(0,0,0,.28);
+}
+
+.block-status-strip{
+  grid-template-columns:repeat(6,minmax(148px,1fr));
+  gap:9px;
+  overflow-x:auto;
+  padding:1px 1px 6px;
+  scrollbar-width:thin;
+}
+
+.block-status-strip button{
+  --state:#f3f3f3;
+  position:relative;
+  min-width:148px;
+  min-height:78px;
+  display:grid;
+  grid-template-columns:12px minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.09)!important;
+  border-radius:8px!important;
+  background:linear-gradient(145deg,rgba(14,31,49,.96),rgba(7,17,29,.98))!important;
+  color:var(--muted)!important;
+  text-align:left;
+  box-shadow:0 8px 18px rgba(0,0,0,.16);
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+
+.block-status-strip button:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:3px;
+  background:var(--state);
+  box-shadow:0 0 9px color-mix(in srgb,var(--state),transparent 25%);
+}
+
+.block-status-strip button:hover{
+  transform:translateY(-2px);
+  border-color:color-mix(in srgb,var(--state),#fff 24%)!important;
+  box-shadow:0 12px 24px rgba(0,0,0,.24),0 0 15px color-mix(in srgb,var(--state),transparent 82%);
+}
+
+.block-status-strip button.active{
+  border-color:color-mix(in srgb,var(--state),#fff 26%)!important;
+  background:linear-gradient(145deg,#12314e,#081724)!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--state),transparent 55%),
+             0 12px 26px rgba(0,0,0,.25),
+             0 0 19px color-mix(in srgb,var(--state),transparent 82%);
+}
+
+.block-signal-mark{
+  width:11px;
+  height:34px;
+  border-radius:6px;
+  background:var(--state);
+  box-shadow:0 0 9px color-mix(in srgb,var(--state),transparent 28%);
+}
+
+.block-signal-copy{
+  min-width:0;
+  display:grid;
+  gap:2px;
+}
+
+.block-signal-copy small{
+  color:#85929d;
+  font-size:6.5px;
+  line-height:1;
+}
+
+.block-signal-copy b{
+  overflow:hidden;
+  color:#fff;
+  font:600 15px/1.05 var(--font-display);
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.block-signal-copy em{
+  overflow:hidden;
+  color:#9ba6ae;
+  font-size:6.5px;
+  font-style:normal;
+  line-height:1.15;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.block-status-strip button>strong{
+  color:#fff!important;
+  font:700 28px/.92 var(--font-display)!important;
+  letter-spacing:-.035em;
+}
+
+.block-status-strip .status-blocked>strong{color:#ff7777!important}
+
+/* Whole-project field and its square interactions. */
+.project-block-field{
+  border-color:rgba(214,181,90,.32)!important;
+}
+
+.project-block-field>header{
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(214,181,90,.13);
+}
+
+.project-block-field h2{
+  font-size:clamp(28px,2.5vw,39px);
+  letter-spacing:-.025em;
+}
+
+.project-block-key span{
+  min-height:25px;
+  padding:0 8px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:99px;
+  background:#071522;
+  color:#aeb8bf;
+}
+
+.project-block-grid{
+  position:relative;
+  margin-top:17px;
+}
+
+.project-block{
+  position:relative;
+  overflow:visible!important;
+  outline:0;
+}
+
+.project-block:hover,.project-block:focus-visible{
+  transform:scale(1.42);
+  z-index:12;
+  border-color:#fff!important;
+  box-shadow:0 0 0 2px #071522,0 0 0 3px var(--state),
+             0 0 17px color-mix(in srgb,var(--state),transparent 12%);
+}
+
+/* Shared accessible hover/focus tooltip for coloured squares. */
+.atlas-tooltip{
+  position:fixed;
+  z-index:10050;
+  width:max-content;
+  max-width:min(330px,calc(100vw - 24px));
+  padding:9px 11px;
+  pointer-events:none;
+  opacity:0;
+  transform:translateY(4px);
+  border:1px solid rgba(241,210,125,.55);
+  border-radius:6px;
+  background:linear-gradient(145deg,#112b43,#06131f);
+  box-shadow:0 14px 32px rgba(0,0,0,.42);
+  color:#fff;
+  font:600 10px/1.35 var(--font-ui);
+  letter-spacing:.01em;
+  transition:opacity .12s ease,transform .12s ease;
+}
+
+.atlas-tooltip.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.atlas-tooltip b{
+  display:block;
+  margin-bottom:2px;
+  color:var(--gold-bright);
+  font:600 15px/1.05 var(--font-display);
+}
+
+/* By-territory Block Map uses the same typographic hierarchy. */
+.block-head span{
+  color:var(--gold);
+  font:700 8px/1 var(--font-ui);
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+
+.block-head h3{
+  font-size:clamp(23px,2vw,30px);
+  letter-spacing:-.02em;
+}
+
+.block-stats>div{
+  min-height:72px;
+  display:grid;
+  align-content:center;
+  gap:2px;
+  padding:10px;
+}
+
+.block-stats strong{
+  font-size:29px!important;
+}
+
+.block-stats span{
+  color:var(--muted);
+  font:700 7px/1 var(--font-ui);
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+.mini-items button{
+  transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;
+}
+
+.mini-items button:hover,.mini-items button:focus-visible{
+  transform:scale(1.2);
+  z-index:3;
+  border-color:#fff!important;
+  box-shadow:0 0 0 2px #071522,0 0 0 3px var(--state),
+             0 0 12px color-mix(in srgb,var(--state),transparent 24%);
+}
+
+/* --------------------------------------------------------------------------
+   Remaining views — one visual grammar
+   -------------------------------------------------------------------------- */
+:is(.milestone-summary,.command-summary-grid,.territory-kpis,.drawer-summary){
+  gap:10px;
+}
+
+:is(.milestone-summary,.command-summary-grid,.territory-kpis,.drawer-summary)>div{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--atlas-border)!important;
+  border-radius:8px!important;
+  background:var(--atlas-surface-1)!important;
+  box-shadow:0 9px 20px rgba(0,0,0,.16);
+}
+
+:is(.milestone-summary,.command-summary-grid,.territory-kpis,.drawer-summary)>div:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:2px;
+  background:var(--metric-accent,var(--gold));
+}
+
+:is(.milestone-summary,.command-summary-grid,.territory-kpis,.drawer-summary)>div>strong{
+  font-size:clamp(26px,2.4vw,34px)!important;
+  letter-spacing:-.035em;
+}
+
+:is(.milestone-summary,.command-summary-grid,.territory-kpis,.drawer-summary)>div>span{
+  color:#a8b3bb;
+  font-size:7px;
+}
+
+:is(.milestone-summary,.command-summary-grid,.territory-kpis,.drawer-summary)>div>small{
+  color:#7f8b95;
+  font-size:8px;
+}
+
+:is(.milestone-summary,.command-summary-grid) .attention,
+:is(.milestone-summary,.command-summary-grid) .critical,
+.territory-kpis .blocked-kpi{
+  --metric-accent:var(--red);
+}
+
+.command-summary-grid .review{--metric-accent:var(--blue)}
+
+.command-card h3,.milestone-card h2,.structure-card h3{
+  letter-spacing:-.018em;
+}
+
+.command-card>header,.command-card>footer,
+.milestone-card>header{
+  font-family:var(--font-ui);
+}
+
+.command-card>footer{
+  min-height:30px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+.structure-summary{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+}
+
+.structure-summary span{
+  min-height:48px;
+  display:grid;
+  place-items:center;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:5px;
+  background:#071522;
+  color:#b4bec5;
+  font:700 8px/1.25 var(--font-ui);
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.territory-card-title h3{
+  letter-spacing:-.02em;
+}
+
+.territory-health-panel strong,
+.data-pill strong{
+  font-family:var(--font-display)!important;
+}
+
+.status-distribution>div{
+  min-height:43px;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:5px;
+  background:#071522;
+}
+
+.status-distribution strong{
+  font-size:21px!important;
+}
+
+/* Register and tables */
+#registerTools{
+  gap:8px;
+}
+
+#registerTools :is(input,select){
+  min-height:43px;
+}
+
+table{
+  border-collapse:separate;
+  border-spacing:0;
+}
+
+table thead{
+  background:#061522;
+}
+
+table th{
+  color:#c0c9cf!important;
+  font-size:7px!important;
+}
+
+table td{
+  color:#d9dfe3;
+  font-family:var(--font-ui);
+  font-size:10px;
+}
+
+table tbody tr{
+  transition:background .14s ease,box-shadow .14s ease;
+}
+
+table tbody tr:hover{
+  background:#0d2942!important;
+  box-shadow:inset 3px 0 0 var(--gold);
+}
+
+table td:first-child,
+table td:last-child{
+  font-variant-numeric:tabular-nums;
+}
+
+table td:last-child{
+  color:var(--gold-bright);
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:700;
+}
+
+/* Drawers and modal details */
+.drawer-hero h2,.modal-card h2{
+  letter-spacing:-.024em;
+}
+
+.drawer-summary strong{
+  font-size:28px!important;
+}
+
+.drawer-command>strong{
+  display:block;
+  margin:4px 0;
+  color:var(--gold-bright);
+  font:600 26px/1 var(--font-display);
+}
+
+.row-item{
+  min-height:58px;
+  transition:border-color .14s ease,background .14s ease,transform .14s ease;
+}
+
+.row-item:hover{
+  transform:translateX(2px);
+}
+
+.row-item>span:first-child,
+.action-rank{
+  font-family:var(--font-display)!important;
+  font-variant-numeric:tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive refinements
+   -------------------------------------------------------------------------- */
+@media (max-width:1180px){
+  .block-status-strip{
+    grid-template-columns:repeat(3,minmax(158px,1fr));
+    overflow:visible;
+  }
+}
+
+@media (max-width:680px){
+  .block-mode-switch{
+    width:100%;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .block-status-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .block-status-strip button{
+    min-width:0;
+    min-height:74px;
+    grid-template-columns:9px minmax(0,1fr) auto;
+    gap:8px;
+    padding:9px;
+  }
+
+  .block-signal-mark{
+    width:8px;
+    height:31px;
+  }
+
+  .block-signal-copy b{font-size:13px}
+  .block-signal-copy em{display:none}
+  .block-status-strip button>strong{font-size:24px!important}
+
+  .project-block-field>header{
+    align-items:start;
+  }
+
+  .project-block-key{
+    gap:6px;
+  }
+
+  .structure-summary{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  :is(.panel-expand,.link-btn,.back-link,.project-block-field>footer button,
+      .block-footer button,.structure-card header button,.dependency-columns button){
+    min-height:42px;
+  }
+}
+
+@media (max-width:390px){
+  .block-status-strip button{
+    min-height:69px;
+  }
+
+  .block-signal-copy small{
+    font-size:6px;
+  }
+
+  .block-signal-copy b{
+    font-size:12px;
+  }
+
+  .block-status-strip button>strong{
+    font-size:22px!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .atlas-tooltip,.block-status-strip button,.mini-items button{transition:none!important}
+}
