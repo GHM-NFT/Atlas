@@ -1,0 +1,15 @@
+{
+  "version": "28.1",
+  "name": "Desktop Navigation Review",
+  "baseline": "v28 Optimised",
+  "date": "2026-07-20",
+  "changes": [
+    "Restored five labelled map icons to desktop top navigation",
+    "Frameless active underline, glow and subtle activation animation",
+    "Enlarged Atlas logo",
+    "122px textured top navigation with brighter gold stroke",
+    "Complete architectural top-nav and rail dividers",
+    "Clickable bottom-flush Atlas figure",
+    "Responsive and reduced-motion refinements"
+  ]
+}

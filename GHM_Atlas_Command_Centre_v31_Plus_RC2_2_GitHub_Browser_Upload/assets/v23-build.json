@@ -1,0 +1,42 @@
+{
+  "product": "GHM Atlas Command Centre",
+  "version": 23,
+  "foundation": "v20 UX and information depth",
+  "visualSource": "user-supplied v23 overview and navigation mock-up",
+  "items": 248,
+  "workstreams": 11,
+  "topNavigation": [
+    "Overview",
+    "Bird\u2019s-eye",
+    "Structured",
+    "Block",
+    "Waffle",
+    "Timeline",
+    "Register",
+    "Dependencies",
+    "Evidence",
+    "Decisions"
+  ],
+  "visualMapButton": false,
+  "leftRail": {
+    "coreViews": 5,
+    "territoryIndex": true,
+    "officialGoldTerritoryIcons": 11,
+    "projectControls": 5
+  },
+  "overview": {
+    "introductionPanel": true,
+    "waxSignals": true,
+    "liveBirdseye": true,
+    "territoryPulseCards": 4,
+    "condensedTerritoryOverview": 11,
+    "commandWatch": true
+  },
+  "birdseyeModes": [
+    "Dependency",
+    "Territory",
+    "Workflow",
+    "Risk focus"
+  ],
+  "ethos": "decorative footer on every page"
+}
