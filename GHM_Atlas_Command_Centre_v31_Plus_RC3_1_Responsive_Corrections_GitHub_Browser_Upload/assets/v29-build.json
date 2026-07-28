@@ -1,0 +1,15 @@
+{
+  "version": "29.0",
+  "build": "navigation-correction",
+  "baseline": "v28.1",
+  "date": "2026-07-20",
+  "notes": [
+    "Supplied five illustrated map icons moved into left rail with labels",
+    "Inactive map modes fade to 50%; active mode uses white label, glow and subtle animation",
+    "Top navigation follows approved mockup with all map and command-centre buttons",
+    "Two supplied realistic top-nav columns added",
+    "Supplied realistic left-nav column added",
+    "Overview hero uses supplied Atlas Master Map artwork",
+    "No generated imagery"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "29.2",
+  "milestone": "Navigation finishing pass",
+  "baseline": "v29.1",
+  "date": "2026-07-20",
+  "notes": [
+    "Cropped and enlarged the supplied Atlas wordmark for substantially stronger visual presence.",
+    "Increased the five left-rail map icons by 20 percent and added more vertical spacing.",
+    "Enhanced active map glow with a layered halo, white label, luminous underline and restrained motion.",
+    "Reduced both top-navigation columns by approximately 30 percent.",
+    "Moved the far-right column after the Command Centre Map and visible-items typography.",
+    "Added a fine horizontal rule and breathing room around the left-rail column divider.",
+    "Preserved labelled wax mappings, existing functionality, mobile navigation and reduced-motion support.",
+    "No generated imagery."
+  ]
+}

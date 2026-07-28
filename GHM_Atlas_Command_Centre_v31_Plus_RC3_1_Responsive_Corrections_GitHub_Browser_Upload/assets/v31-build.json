@@ -1,0 +1,37 @@
+{
+  "version": "31+",
+  "packageVersion": "31.1.0",
+  "edition": "Internal Local Mac",
+  "classification": "PRIVATE",
+  "readOnly": true,
+  "publicUploadAllowed": false,
+  "sourceFilesIncluded": false,
+  "fontFilesIncluded": false,
+  "imageGenerationUsed": false,
+  "sourceSnapshot": "2026-07-21",
+  "counts": {
+    "physicalRecords": 877,
+    "uniqueNodeIds": 873,
+    "canonicalWorkItems": 201,
+    "territories": 11,
+    "milestones": 63,
+    "dependencies": 56,
+    "evidence": 111,
+    "decisions": 95,
+    "risksBlockers": 47,
+    "documentsSources": 214,
+    "validationFindings": 210,
+    "highCriticalUnresolved": 57
+  },
+  "duplicateNodeIds": [
+    "SRC042",
+    "SRC043",
+    "SRC044",
+    "SRC045"
+  ],
+  "progressTreatment": "Not recorded",
+  "entryPoint": "index.html",
+  "localAddress": "http://127.0.0.1:8000/index.html",
+  "macLauncher": "Start Atlas.command",
+  "finalCssLayer": "css/v31-plus-amends.css"
+}
