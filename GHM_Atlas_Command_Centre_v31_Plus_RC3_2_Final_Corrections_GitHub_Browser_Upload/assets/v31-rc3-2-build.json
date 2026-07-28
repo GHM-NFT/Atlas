@@ -1,0 +1,35 @@
+{
+  "version": "31+ RC3.2",
+  "packageVersion": "31.3.2",
+  "edition": "Internal Local Mac",
+  "classification": "PRIVATE",
+  "readOnly": true,
+  "publicUploadAllowed": false,
+  "imageGenerationUsed": false,
+  "sourceSnapshot": "2026-07-21",
+  "baseline": "RC3.1 Responsive Corrections",
+  "counts": {
+    "physicalRecords": 877,
+    "uniqueNodeIds": 873,
+    "workItems": 201,
+    "territories": 11,
+    "milestones": 63,
+    "dependencies": 56,
+    "evidence": 111,
+    "decisions": 95,
+    "risksBlockers": 47,
+    "validationFindings": 210
+  },
+  "provisionalProgress": {
+    "enabled": true,
+    "items": 201,
+    "minimum": 12,
+    "maximum": 100,
+    "auditDisplay": "50% provisional"
+  },
+  "suppliedAssets": [
+    "assets/wax/high.png",
+    "assets/wax/turquoise.png"
+  ],
+  "finalOverride": "css/v31-rc3-2-final.css"
+}
