@@ -1,0 +1,18 @@
+{
+  "version": "26.0-A",
+  "milestone": "Left Navigation Refresh",
+  "date": "2026-07-20",
+  "baseline": "v25",
+  "changes": [
+    "Integrated final approved 11-territory SVG icon set",
+    "Refined sticky left rail spacing, hierarchy, active, hover and keyboard focus states",
+    "Added approved Atlas figure graphic to the bottom of the desktop rail",
+    "Preserved all navigation routes, data attributes, application state and mobile behaviour"
+  ],
+  "scope_excluded": [
+    "Top navigation and real logo integration (v26.0-B)",
+    "Map icon integration and mobile hamburger artwork (v26.0-B)",
+    "Wax seal and wider UI accent treatment (v26.0-C)",
+    "Hero image section backgrounds and map navigation controls"
+  ]
+}

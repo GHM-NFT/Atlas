@@ -1,0 +1,41 @@
+{
+  "product": "GHM Atlas Command Centre",
+  "version": 21,
+  "edition": "Integrated Hybrid",
+  "foundation": [
+    "v19 Bird\u2019s-eye interaction model",
+    "v20 complete-data visual treatment"
+  ],
+  "items": 248,
+  "workstreams": 11,
+  "default_view": "overview",
+  "map_name": "Bird\u2019s-eye Map",
+  "ethos_choice": "Option 2",
+  "official_icon_mapping": {
+    "overview": "building",
+    "WS001": "open scroll",
+    "WS002": "globe",
+    "WS003": "cog",
+    "WS004": "masks",
+    "WS005": "inscribed stone",
+    "WS006": "torch and wreath",
+    "WS007": "Atlas",
+    "WS008": "classical profile",
+    "WS009": "scales",
+    "WS010": "closed scroll",
+    "WS011": "layered print icon"
+  },
+  "features": {
+    "overview_hero": true,
+    "persistent_ethos_navigation": true,
+    "glass_command_drawer": true,
+    "drawer_auto_close_on_navigation": true,
+    "wax_status_court": true,
+    "full_stage_birdseye_map": true,
+    "colored_dependency_dots": true,
+    "risk_rings": true,
+    "interactive_waffle": true,
+    "interactive_block_map": true,
+    "complete_mock_data": true
+  }
+}

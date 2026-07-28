@@ -1,0 +1,39 @@
+{
+  "version": "30.2",
+  "milestone": "Final visual-system completion",
+  "baseline": "v30.1",
+  "scope": [
+    "v20-inspired gradient loader",
+    "subtle moving light effect",
+    "Roboto Slab and Inter hierarchy",
+    "Praetoria-ready brand stack",
+    "complete page and component styling",
+    "drawer and modal styling",
+    "overlay focus management",
+    "responsive completion"
+  ],
+  "pages_audited": [
+    "overview",
+    "birdseye",
+    "structured",
+    "square",
+    "waffle",
+    "territories",
+    "territory",
+    "timeline",
+    "register",
+    "dependencies",
+    "evidence",
+    "decisions"
+  ],
+  "overlays_audited": [
+    "mobile navigation",
+    "territory drawer",
+    "item modal",
+    "prototype modal",
+    "tooltip",
+    "toast"
+  ],
+  "font_files_included": false,
+  "image_generation": false
+}

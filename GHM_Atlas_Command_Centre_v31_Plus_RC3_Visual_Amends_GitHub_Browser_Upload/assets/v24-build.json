@@ -1,0 +1,19 @@
+{
+  "version": "v24",
+  "date": "2026-07-19",
+  "baseline": "v23",
+  "scope": [
+    "Simplified top navigation",
+    "Five enlarged left-rail map controls",
+    "Two-column direct territory quick links",
+    "SVG territory icon replacement",
+    "Removed left-rail project controls",
+    "Cross-page UI/UX polish",
+    "Evidence retained in top navigation"
+  ],
+  "data": {
+    "workstreams": 11,
+    "items": 248
+  },
+  "notes": "No generated artwork. Existing large workstream artwork and core product structure are retained."
+}
