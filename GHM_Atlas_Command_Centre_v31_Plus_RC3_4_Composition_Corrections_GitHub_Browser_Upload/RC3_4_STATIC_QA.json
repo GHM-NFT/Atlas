@@ -1,0 +1,147 @@
+{
+  "build": "GHM_Atlas_Command_Centre_v31_Plus_RC3_4_Composition_Corrections_GitHub_Browser_Upload",
+  "edition": "GitHub Browser Upload",
+  "results": [
+    {
+      "name": "JavaScript syntax: app.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: data.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: provisional-progress.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: rc2.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unique HTML IDs",
+      "passed": true,
+      "detail": {
+        "count": 67,
+        "duplicates": []
+      }
+    },
+    {
+      "name": "HTML local references",
+      "passed": true,
+      "detail": {
+        "count": 44,
+        "missing": []
+      }
+    },
+    {
+      "name": "CSS parses without top-level errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "CSS local asset references",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "RC3.4 body class",
+      "passed": true,
+      "detail": "rc3-4-build"
+    },
+    {
+      "name": "RC3.4 final stylesheet",
+      "passed": true,
+      "detail": "atlas-combined.css"
+    },
+    {
+      "name": "Overview Block preview",
+      "passed": true,
+      "detail": "overviewBlockMini"
+    },
+    {
+      "name": "Territory Block preview",
+      "passed": true,
+      "detail": "rc2-territory-block-mini"
+    },
+    {
+      "name": "Crisp ring pulse",
+      "passed": true,
+      "detail": "node-pulse-ring"
+    },
+    {
+      "name": "Doubled map icons",
+      "passed": true,
+      "detail": "iconSize=compact?176:240"
+    },
+    {
+      "name": "Turquoise In progress",
+      "passed": true,
+      "detail": "Active:\"#14c6c9\""
+    },
+    {
+      "name": "Bright Critical red",
+      "passed": true,
+      "detail": "#ff1744"
+    },
+    {
+      "name": "Two-column Evidence",
+      "passed": true,
+      "detail": "drawer-evidence-list"
+    },
+    {
+      "name": "Overview main gauge",
+      "passed": true,
+      "detail": "hero-main-progress"
+    },
+    {
+      "name": "Approved dataset counts unchanged",
+      "passed": true,
+      "detail": {
+        "workstreams": 11,
+        "items": 201,
+        "physical": 877,
+        "unique": 873,
+        "milestones": 63,
+        "dependencies": 56,
+        "evidence": 111,
+        "decisions": 95,
+        "risksBlockers": 47,
+        "validationIssues": 210
+      }
+    },
+    {
+      "name": "RC3.4 build manifest",
+      "passed": true,
+      "detail": "assets/v31-rc3-4-build.json"
+    },
+    {
+      "name": "No stale RC3.3 document links",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "details": {
+    "counts": {
+      "workstreams": 11,
+      "items": 201,
+      "physical": 877,
+      "unique": 873,
+      "milestones": 63,
+      "dependencies": 56,
+      "evidence": 111,
+      "decisions": 95,
+      "risksBlockers": 47,
+      "validationIssues": 210
+    },
+    "html_id_count": 67,
+    "html_local_ref_count": 44,
+    "file_count": 90,
+    "result_count": 21,
+    "passed_count": 21
+  }
+}

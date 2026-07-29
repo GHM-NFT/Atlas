@@ -1,0 +1,26 @@
+{
+  "build": "v31+ RC3.4 Composition Corrections",
+  "releaseDate": "2026-07-29",
+  "sourceBuild": "v31+ RC3.3 Chrome Pass",
+  "dataSnapshot": "2026-07-21",
+  "sourceWorkbookModified": "2026-07-15T14:02:17Z",
+  "edition": "GitHub Browser Upload",
+  "dataCounts": {
+    "physicalRecords": 877,
+    "uniqueNodeIds": 873,
+    "workItems": 201,
+    "milestones": 63,
+    "dependencies": 56,
+    "evidence": 111,
+    "decisions": 95,
+    "risksBlockers": 47,
+    "validationFindings": 210
+  },
+  "notes": [
+    "Approved snapshot retained; no live Google Sheets connection.",
+    "Estimated progress values remain visual placeholders and are labelled 'est.'.",
+    "Overview and Territory pages now use Block previews and the same composition system.",
+    "Bird's-eye nodes use a crisp expanding ring pulse; territory illustrations are doubled.",
+    "Primary territory/navigation icon replacement set remains pending."
+  ]
+}
