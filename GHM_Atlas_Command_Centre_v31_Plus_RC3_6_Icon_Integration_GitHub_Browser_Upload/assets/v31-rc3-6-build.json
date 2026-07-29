@@ -1,0 +1,40 @@
+{
+  "build": "v31+ RC3.6 Icon Integration",
+  "releaseDate": "2026-07-29",
+  "sourceBuild": "v31+ RC3.5 Home & Map Corrections",
+  "dataSnapshot": "2026-07-21",
+  "sourceWorkbookModified": "2026-07-15T14:02:17Z",
+  "edition": "GitHub Browser Upload",
+  "imageGenerationUsed": false,
+  "dataCounts": {
+    "physicalRecords": 877,
+    "uniqueNodeIds": 873,
+    "workItems": 201,
+    "milestones": 63,
+    "dependencies": 56,
+    "evidence": 111,
+    "decisions": 95,
+    "risksBlockers": 47,
+    "validationFindings": 210
+  },
+  "suppliedAssets": [
+    "01_GHM_White_Paper.png",
+    "02_GHM_website.png",
+    "03_GHM_pipeline-technical.png",
+    "04_GHM_Video_Production.png",
+    "05_GHM_Metadata_Manifest.png",
+    "06_GHM_Launch_Market_Readiness.png",
+    "07_GHM_Atlas_Story_Portal.png",
+    "08_GHM_Artwork_Collections.png",
+    "09_GHM_QA_Review_Decisions.png",
+    "10_GHM_Sources_Library.png",
+    "11_GHM_Prints_Fulfilment.png"
+  ],
+  "productionIconFormat": "512\u00d7512 lossless WebP with alpha",
+  "finalOverride": "css/atlas-combined.css",
+  "notes": [
+    "All 11 supplied territory icons are integrated across navigation, overview, territory pages, cards, drawers, Block, Waffle, mini maps and Bird\u2019s-eye.",
+    "Supplied canvases were normalised without cropping before production derivatives were created.",
+    "Approved snapshot retained; no live Google Sheets connection."
+  ]
+}

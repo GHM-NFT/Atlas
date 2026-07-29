@@ -1,0 +1,229 @@
+{
+  "build": "v31+ RC3.6 Icon Integration",
+  "edition": "GitHub Browser Upload",
+  "releaseDate": "2026-07-29",
+  "sourceBuild": "v31+ RC3.5 Home & Map Corrections",
+  "browserRuntimeTest": "Not run: local browser navigation is restricted by the execution environment.",
+  "checks": {
+    "jsSyntax": {
+      "app.js": {
+        "pass": true,
+        "message": ""
+      },
+      "data.js": {
+        "pass": true,
+        "message": ""
+      },
+      "provisional-progress.js": {
+        "pass": true,
+        "message": ""
+      },
+      "rc2.js": {
+        "pass": true,
+        "message": ""
+      }
+    },
+    "cssBraceBalance": {
+      "atlas-combined.css": true
+    },
+    "missingLocalReferences": [],
+    "dataTopLevelCounts": {
+      "workstreams": 11,
+      "items": 201,
+      "territoryEdges": 24
+    },
+    "iconFiles": [
+      {
+        "file": "ws001.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 314268
+      },
+      {
+        "file": "ws002.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 284204
+      },
+      {
+        "file": "ws003.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 327306
+      },
+      {
+        "file": "ws004.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 318020
+      },
+      {
+        "file": "ws005.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 328196
+      },
+      {
+        "file": "ws006.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 344696
+      },
+      {
+        "file": "ws007.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 359534
+      },
+      {
+        "file": "ws008.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 334568
+      },
+      {
+        "file": "ws009.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 343814
+      },
+      {
+        "file": "ws010.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 320484
+      },
+      {
+        "file": "ws011.webp",
+        "exists": true,
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha": true,
+        "bytes": 340684
+      }
+    ],
+    "staticNavigationIconReferences": {
+      "count": 22,
+      "unique": [
+        "ws001",
+        "ws002",
+        "ws003",
+        "ws004",
+        "ws005",
+        "ws006",
+        "ws007",
+        "ws008",
+        "ws009",
+        "ws010",
+        "ws011"
+      ],
+      "expectedCount": 22,
+      "pass": true
+    },
+    "dataPrimaryIconMappings": {
+      "count": 11,
+      "unique": [
+        "ws001",
+        "ws002",
+        "ws003",
+        "ws004",
+        "ws005",
+        "ws006",
+        "ws007",
+        "ws008",
+        "ws009",
+        "ws010",
+        "ws011"
+      ],
+      "pass": true
+    },
+    "dataNavigationIconMappings": {
+      "count": 11,
+      "unique": [
+        "ws001",
+        "ws002",
+        "ws003",
+        "ws004",
+        "ws005",
+        "ws006",
+        "ws007",
+        "ws008",
+        "ws009",
+        "ws010",
+        "ws011"
+      ],
+      "pass": true
+    },
+    "legacyIconReferences": {
+      "count": 0,
+      "pass": true
+    },
+    "bodyBuildClass": {
+      "pass": true
+    },
+    "fileCount": 82,
+    "launcherExecutable": null
+  },
+  "summary": {
+    "jsPass": true,
+    "cssPass": true,
+    "referencesPass": true,
+    "iconsPass": true,
+    "mappingPass": true,
+    "datasetPass": true,
+    "overallStaticPass": true
+  }
+}

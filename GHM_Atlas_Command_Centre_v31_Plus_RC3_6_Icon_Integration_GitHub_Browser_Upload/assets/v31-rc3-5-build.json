@@ -1,0 +1,30 @@
+{
+  "build": "v31+ RC3.5 Home & Map Corrections",
+  "releaseDate": "2026-07-29",
+  "sourceBuild": "v31+ RC3.4 Composition Corrections",
+  "dataSnapshot": "2026-07-21",
+  "sourceWorkbookModified": "2026-07-15T14:02:17Z",
+  "edition": "Internal Local Mac",
+  "imageGenerationUsed": false,
+  "dataCounts": {
+    "physicalRecords": 877,
+    "uniqueNodeIds": 873,
+    "workItems": 201,
+    "milestones": 63,
+    "dependencies": 56,
+    "evidence": 111,
+    "decisions": 95,
+    "risksBlockers": 47,
+    "validationFindings": 210
+  },
+  "suppliedAssets": [
+    "assets/hero/Atlas-the-heroes-blue.jpg"
+  ],
+  "finalOverride": "css/v31-rc3-5-home-map.css",
+  "notes": [
+    "Approved snapshot retained; no live Google Sheets connection.",
+    "All estimated percentage gauges use exactly two colours and white numeric labels.",
+    "Overview Block preview renders all 201 work items.",
+    "Primary territory/navigation icon replacement set remains pending."
+  ]
+}
