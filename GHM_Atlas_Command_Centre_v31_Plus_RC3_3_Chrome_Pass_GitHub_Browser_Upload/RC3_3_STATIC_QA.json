@@ -1,0 +1,168 @@
+{
+  "build": "v31+ RC3.3 Chrome Pass",
+  "date": "2026-07-29",
+  "scope": "Static package validation",
+  "browserAutomation": "Not completed in this environment; final Chrome visual review required.",
+  "checks": [
+    {
+      "check": "JavaScript syntax",
+      "passed": true,
+      "detail": "node --check passed"
+    },
+    {
+      "check": "Shell syntax: Start Atlas.command",
+      "passed": true,
+      "detail": "bash -n passed"
+    },
+    {
+      "check": "Executable: Start Atlas.command",
+      "passed": true,
+      "detail": "Executable bit set"
+    },
+    {
+      "check": "Shell syntax: Start Atlas.app/Contents/MacOS/start-atlas",
+      "passed": true,
+      "detail": "bash -n passed"
+    },
+    {
+      "check": "Executable: Start Atlas.app/Contents/MacOS/start-atlas",
+      "passed": true,
+      "detail": "Executable bit set"
+    },
+    {
+      "check": "Mac app Info.plist",
+      "passed": true,
+      "detail": "Version 31.3.3"
+    },
+    {
+      "check": "Unique HTML IDs",
+      "passed": true,
+      "detail": "67 IDs; duplicates: none"
+    },
+    {
+      "check": "HTML local references",
+      "passed": true,
+      "detail": "66 references; missing: none"
+    },
+    {
+      "check": "CSS brace balance",
+      "passed": true,
+      "detail": "23 stylesheets; mismatches: none"
+    },
+    {
+      "check": "CSS local references",
+      "passed": true,
+      "detail": "Missing: none"
+    },
+    {
+      "check": "Embedded dataset counts",
+      "passed": true,
+      "detail": "Expected {'workstreams': 11, 'items': 201, 'physicalRecords': 877, 'uniqueNodeIds': 873, 'milestones': 63, 'dependencies': 56, 'evidence': 111, 'decisions': 95, 'risksBlockers': 47, 'validationIssues': 210}; actual {'workstreams': 11, 'items': 201, 'physicalRecords': 877, 'uniqueNodeIds': 873, 'milestones': 63, 'dependencies': 56, 'evidence': 111, 'decisions': 95, 'risksBlockers': 47, 'validationIssues': 210}"
+    },
+    {
+      "check": "RC3.3 app version",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Estimated compact labels",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Overview Waffle renderer",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Bird\u2019s-eye supplied centre icon",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Bird\u2019s-eye larger node radius",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Continuous Bird\u2019s-eye trace",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "15px Waffle state stroke",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "1440px navigation breakpoint",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Two-column responsive summaries",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Route scroll reset",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Milestone wax",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Blocked chamber treatment",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Touch tooltip cleanup",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Territory duplicate progress removed",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Condensed duplicate progress removed",
+      "passed": true,
+      "detail": "Present"
+    },
+    {
+      "check": "Asset assets/brand/command-centre-map-icon.png",
+      "passed": true,
+      "detail": "750\u00d7750, RGBA"
+    },
+    {
+      "check": "Asset assets/brand/command-centre-map-icon-master.png",
+      "passed": true,
+      "detail": "1254\u00d71254, RGBA"
+    },
+    {
+      "check": "Asset assets/wax/high.png",
+      "passed": true,
+      "detail": "150\u00d7150, RGBA"
+    },
+    {
+      "check": "Asset assets/wax/turquoise.png",
+      "passed": true,
+      "detail": "150\u00d7150, RGBA"
+    },
+    {
+      "check": "Build manifest",
+      "passed": true,
+      "detail": "Current manifest present"
+    }
+  ],
+  "summary": {
+    "passed": 31,
+    "failed": 0,
+    "total": 31
+  }
+}
