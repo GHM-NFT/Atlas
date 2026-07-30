@@ -1,0 +1,64 @@
+{
+  "product": "GHM Atlas Command Centre",
+  "version": "31+ RC3.8 INTERNAL REVIEW",
+  "buildDate": "2026-07-30",
+  "base": "RC3.7 Final Amends",
+  "mode": "private-local-read-only",
+  "snapshotDate": "2026-07-21",
+  "sourceWorkbookModified": "2026-07-15",
+  "records": {
+    "physical": 877,
+    "uniqueNodeIds": 873,
+    "workItems": 201,
+    "territories": 11,
+    "milestones": 63,
+    "dependencies": 56,
+    "evidence": 111,
+    "decisions": 95,
+    "risksBlockers": 47,
+    "validationFindings": 210
+  },
+  "liveGoogleSheetsConnection": false,
+  "progressAuthority": "Estimated visual placeholders labelled est.; no authoritative source percentage field.",
+  "sourceAssetsOnly": true,
+  "amendmentScope": [
+    "full-width navigation shell",
+    "dropdown strokes",
+    "paired-button continuous backgrounds and column fit",
+    "mobile hero centring",
+    "Praetoria headings",
+    "compact back-button band",
+    "header sizing",
+    "Block territory overlap",
+    "Open Command Index spacing",
+    "responsive burger close control"
+  ],
+  "reviewRevision": "owner-final-responsive-close",
+  "targetedVisualQA": {
+    "viewports": [
+      1440,
+      1366,
+      1180,
+      768,
+      430,
+      390
+    ],
+    "assertionsPassed": 102,
+    "assertionsTotal": 102,
+    "pageErrors": 0
+  },
+  "finalResponsiveCloseQA": {
+    "viewports": [
+      1440,
+      1366,
+      1180,
+      768,
+      430,
+      390
+    ],
+    "packagesPassed": 2,
+    "assertionsPassed": 12,
+    "assertionsTotal": 12,
+    "pageErrors": 0
+  }
+}
