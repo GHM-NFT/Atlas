@@ -1,0 +1,149 @@
+{
+  "product": "GHM Atlas Command Centre",
+  "version": "31+ RC3.8 INTERNAL REVIEW",
+  "date": "2026-07-30",
+  "packageMode": "github-browser-upload",
+  "approvedDataSha256": "60aa2ed41afb5d29c02f371d96a72c374f5fc5f256fcbd68e23dc41eb01fb4e3",
+  "fileCount": 78,
+  "testViewports": [
+    1440,
+    1366,
+    1180,
+    768,
+    430,
+    390
+  ],
+  "visualChecks": {
+    "passed": 102,
+    "total": 102,
+    "pageErrors": [],
+    "scope": "Final owner Issue 2 geometry/action-fit assertions across six target widths",
+    "previousBroadPass": "35/35 local and 35/35 combined CSS"
+  },
+  "routeSmokeChecks": {
+    "passed": 7,
+    "total": 7,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedResponses": []
+  },
+  "staticChecks": [
+    {
+      "name": "JavaScript syntax: app.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: data.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: provisional-progress.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "JavaScript syntax: rc2.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Index local file references",
+      "passed": true,
+      "detail": "73 references; missing: []"
+    },
+    {
+      "name": "CSS brace balance",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS local asset references",
+      "passed": true,
+      "detail": "missing: []"
+    },
+    {
+      "name": "Runtime explicit asset references",
+      "passed": true,
+      "detail": "25 references; missing: []"
+    },
+    {
+      "name": "Approved embedded data unchanged from RC3.7",
+      "passed": true,
+      "detail": "sha256=60aa2ed41afb5d29c02f371d96a72c374f5fc5f256fcbd68e23dc41eb01fb4e3"
+    },
+    {
+      "name": "Approved snapshot manifest counts",
+      "passed": true,
+      "detail": "{'physical': 877, 'uniqueNodeIds': 873, 'workItems': 201, 'territories': 11, 'milestones': 63, 'dependencies': 56, 'evidence': 111, 'decisions': 95, 'risksBlockers': 47, 'validationFindings': 210}"
+    },
+    {
+      "name": "No live Google Sheets connection",
+      "passed": true,
+      "detail": "False"
+    },
+    {
+      "name": "RC3.8 application version",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "RC3.8 body marker",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "RC3.8 final CSS layer loaded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No macOS metadata in package",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Package file count recorded",
+      "passed": true,
+      "detail": "78"
+    },
+    {
+      "name": "Visual amendment QA",
+      "passed": true,
+      "detail": "Final owner Issue 2: 102/102 targeted assertions; previous broad pass 35/35 retained; page errors=0"
+    },
+    {
+      "name": "Route/function smoke QA",
+      "passed": true,
+      "detail": "7/7; page errors=0; console errors=0; failed responses=0"
+    }
+  ],
+  "allPassed": true,
+  "visualSignoffRequired": true,
+  "reviewRevision": "owner-visual-qa-issue-2",
+  "targetedIssue2Checks": {
+    "viewports": [
+      1440,
+      1366,
+      1180,
+      768,
+      430,
+      390
+    ],
+    "checksPerViewport": 17,
+    "assertionsPassed": 102,
+    "assertionsTotal": 102,
+    "pageErrors": [],
+    "areas": [
+      "full-width top navigation",
+      "responsive nav mode",
+      "compact Back band",
+      "Dependency action fit/background",
+      "Evidence action fit/background",
+      "Decision action fit/background",
+      "ID/action column proportion"
+    ]
+  },
+  "combinedCss": "css/atlas-combined.css"
+}
